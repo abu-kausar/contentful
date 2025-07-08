@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import React from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function useHover(ref: any) {
   const [hovered, setHovered] = useState(false);
 
@@ -25,6 +26,7 @@ function useHover(ref: any) {
 }
 
 const ArrowsCarousel = ({ children }: { children: React.ReactNode }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [swiper, setSwiper] = useState<any>(null);
   const ref = useRef(null);
   const hovered = useHover(ref);
