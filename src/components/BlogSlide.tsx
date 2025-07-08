@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
 
-export interface ArticlePreviewFields {
-  title: string;
-  image: string;
-  description: string;
-}
-
 interface BlogSlideProps {
   title: string;
   image: string;

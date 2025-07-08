@@ -1,17 +1,50 @@
 "use client";
+import ArrowsCarousel from "@/components/ArrowCarousel";
 import CampaignTicker from "@/components/CampaignTicker";
 import ColorSection from "@/components/ColorSection";
 import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
 import LandingHero from "@/components/LandingHero";
 import SplitSectionBlogSlider from "@/components/SplitSectionBlogSlider";
+import Link from "next/link";
+import { useState } from "react";
+
+const featuredBlogPosts = [
+  {
+    index: 1,
+    title: "Black Community-Owned Health Institutions",
+    image: "/march.jpeg ",
+  },
+  {
+    index: 2,
+    title: "Take All Freedom Actions",
+    image: "/april.jpg ",
+  },
+  {
+    index: 3,
+    title: "Help Invest $300M in the Black Community",
+    image: "/may.jpg ",
+  },
+  {
+    index: 4,
+    title: "Help Build the Family Empowerment Center",
+    image: "/june.jpg ",
+  },
+  {
+    index: 5,
+    title: "Support Black Farming Liberation",
+    image: "/july.jpg ",
+  },
+];
 
 export default function Home() {
+  const [selected, setSelected] = useState("recent");
+
   return (
     <div className="">
-      <LandingHero/>
+      <LandingHero />
 
-      <CampaignTicker campaignTickerText="Take Action"/>
-      
+      <CampaignTicker campaignTickerText="Take Action" />
+
       <ColorSection
         title="We have a plan"
         subtitle="We leverage the brilliance of our local Black ecosystem to identify, elevate, and co-create Black equity
@@ -20,6 +53,47 @@ export default function Home() {
         backgroundColor="bg-green"
         showButton={false}
       />
+
+      <section>
+        <div className="flex w-full px-8 md:px-12 mt-8 flex-col md:flex-row items-start md:items-center justify-center md:justify-start gap-x-2">
+          <h2 className="font-button text-xl uppercase tracking-wide pb-4 mr-5 text-white mt-4">
+            Recent Actions
+          </h2>
+          <div className="flex flex-wrap items-center gap-2 md:gap-x-2">
+            <a target="_blank" rel="noreferrer">
+              <button onClick={() => setSelected("recent")} className={`w-fit focus:outline-none font-button py-2 px-5 uppercase tracking-wider ${selected === "recent" ? "bg-red" : "bg-black"} hover:bg-red-500 text-white rounded-none undefined cursor-pointer`}>
+                Recent wins
+              </button>
+            </a>
+            <a target="_blank" rel="noreferrer">
+              <button onClick={() => setSelected("freedom")} className={`w-fit focus:outline-none font-button py-2 px-5 uppercase tracking-wider ${selected === "freedom" ? "bg-red" : "bg-black"} hover:bg-red-500 text-white rounded-none undefined cursor-pointer`}>
+                Freedom Actions
+              </button>
+            </a>
+            <a target="_blank" rel="noreferrer">
+              <button onClick={() => setSelected("initiatives")} className={`w-fit focus:outline-none font-button py-2 px-5 uppercase tracking-wider ${selected === "initiatives" ? "bg-red" : "bg-black"} hover:bg-red-500 text-white rounded-none undefined cursor-pointer`}>
+                Initiatives
+              </button>
+            </a>
+          </div>
+        </div>
+        <ArrowsCarousel>
+          {featuredBlogPosts.map((blog, index) => (
+            <Link key={index} href="">
+              <div className="text-white">
+                <img
+                  alt="blog image"
+                  src={blog?.image}
+                  className="w-full h-[200px] my-2"
+                />
+                <h2 className="text-2xl tracking-wide pb-4">
+                  {blog?.title}
+                </h2>
+              </div>
+            </Link>
+          ))}
+        </ArrowsCarousel>
+      </section>
 
       <ColorSection
         title="#PaytheFee"
@@ -30,7 +104,7 @@ export default function Home() {
         showButton={true}
       />
 
-      <SplitSectionBlogSlider/>
+      <SplitSectionBlogSlider />
 
       <ColorSection
         title="We Are Africatown"

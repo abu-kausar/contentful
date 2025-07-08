@@ -47,7 +47,7 @@ const LandingHero = () => {
           </div>
           <a href="" target="_blank" rel="noreferrer">
             <button
-              className={`px-10 py-2 cursor-pointer bg-green focus:outline-none rounded-full font-button uppercase tracking-wider`}
+              className={`px-10 py-2 cursor-pointer bg-green hover:bg-white text-white hover:text-green focus:outline-none rounded-full font-button uppercase tracking-wider`}
             >
               Recent wins
             </button>
