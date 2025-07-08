@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const LargeVideo = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const onLoadedData = () => {
-    setIsVideoLoaded(true);
-  };
+//   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+//   const onLoadedData = () => {
+//     setIsVideoLoaded(true);
+//   };
   return (
     <video
       autoPlay
@@ -25,13 +25,13 @@ const LargeVideo = () => {
 };
 
 const LandingHero = () => {
-  const [displayContent, setDisplayContent] = useState(false);
+//   const [displayContent, setDisplayContent] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setDisplayContent(true);
-    }, 150);
-  }, []);
+//   useEffect(() => {
+//     setTimeout(() => {
+//       setDisplayContent(true);
+//     }, 150);
+//   }, []);
 
   return (
     <div className="flex flex-col md:flex-row md:min-h-3/4-screen">
