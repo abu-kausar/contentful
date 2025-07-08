@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const LargeVideo = () => {
-//   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-//   const onLoadedData = () => {
-//     setIsVideoLoaded(true);
-//   };
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  const handleLoadedData = () => {
+    setIsVideoLoaded(true);
+  };
+
   return (
     <video
       autoPlay
@@ -14,7 +16,7 @@ const LargeVideo = () => {
       loop
       playsInline
       className="focus:outline-none w-full h-[667px] appl1-hdvd-xx"
-      onLoadedData={onLoadedData}
+      onLoadedData={isVideoLoaded ? undefined : handleLoadedData}
     >
       <source
         src="https://d2j8oo2nydfmnp.cloudfront.net/sizzle-less-cropped.m4v"
