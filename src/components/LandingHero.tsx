@@ -15,7 +15,7 @@ const LargeVideo = () => {
       controls
       loop
       playsInline
-      className="focus:outline-none w-full h-[667px] appl1-hdvd-xx"
+      className="focus:outline-none w-full h-full object-fill"
       onLoadedData={isVideoLoaded ? undefined : handleLoadedData}
     >
       <source
@@ -27,28 +27,16 @@ const LargeVideo = () => {
 };
 
 const LandingHero = () => {
-//   const [displayContent, setDisplayContent] = useState(false);
-
-//   useEffect(() => {
-//     setTimeout(() => {
-//       setDisplayContent(true);
-//     }, 150);
-//   }, []);
-
   return (
-    <div className="flex flex-col md:flex-row md:min-h-3/4-screen">
+    <div className="flex flex-col md:items-center md:flex-row md:min-h-3/4-screen">
       <div className="w-full md:w-1/2 bg-texture border-none flex justify-center items-center py-5 pb-10"
       >
         <div
           className="px-8 md:px-16 opacity-100 transition-opacity text-white"
         >
-          {/* <XLHeader>{mainSplashHeadline}</XLHeader> */}
           <h1 className="font-heading font-bold text-8xl md:text-9xl uppercase tracking-wide">
             Building Black Power
           </h1>
-          {/* <MarkdownContainer className="text-white py-8">
-            {mainSplashDescription.childMarkdownRemark.html}
-          </MarkdownContainer>*/}
           <div className="markdown font-body text-xl text-white py-8">
             King County Equity Now (KCEN) is a pro-Black advocacy and policy
             organizing nonprofit focused on developing liberated Black
@@ -57,9 +45,6 @@ const LandingHero = () => {
             out of a deep legacy of Black organizing in Martin Luther King Jr.
             County, Washington State.
           </div>
-          {/* <ButtonNewWindow to={mainSplashCtaLink} variant={VariantRed}>
-            {mainSplashCtaButtonText}
-          </ButtonNewWindow> */}
           <a href="" target="_blank" rel="noreferrer">
             <button
               className={`px-10 py-2 cursor-pointer bg-green focus:outline-none rounded-full font-button uppercase tracking-wider`}
@@ -71,7 +56,7 @@ const LandingHero = () => {
       </div>
 
       <div
-        className="w-full md:w-1/2 opacity-100 transition-opacity pr-10"
+        className="w-full md:w-1/2 h-auto opacity-100 transition-opacity pr-10"
       >
         <LargeVideo />
       </div>
