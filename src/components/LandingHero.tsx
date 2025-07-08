@@ -45,7 +45,7 @@ const LandingHero = () => {
             out of a deep legacy of Black organizing in Martin Luther King Jr.
             County, Washington State.
           </div>
-          <a href="" target="_blank" rel="noreferrer">
+          <a href="/recentwins" rel="noreferrer">
             <button
               className={`px-10 py-2 cursor-pointer bg-green hover:bg-white text-white hover:text-green focus:outline-none rounded-full font-button uppercase tracking-wider`}
             >
