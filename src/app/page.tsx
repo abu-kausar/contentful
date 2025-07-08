@@ -1,5 +1,6 @@
 "use client";
 import ColorSection from "@/components/ColorSection";
+import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <ColorSection
         title="We have a plan"
         subtitle="We leverage the brilliance of our local Black ecosystem to identify, elevate, and co-create Black equity
-solutions to combat anti-Black racism and bring about sustained, thriving Black communities."
+          solutions to combat anti-Black racism and bring about sustained, thriving Black communities."
         onButtonClick={() => console.log("Sponsorship clicked!")}
         backgroundColor="bg-green"
         showButton={false}
@@ -32,6 +33,8 @@ solutions to combat anti-Black racism and bring about sustained, thriving Black 
         backgroundColor="bg-bostonBlue"
         showButton={false}
       />
+
+      <FeaturedSectionWithVideo youTubeLink="https://www.youtube.com/watch?v=O8rL4YcPH1g" />
 
       <ColorSection
         title="Join the team"
