@@ -1,4 +1,5 @@
 "use client";
+import CampaignTicker from "@/components/CampaignTicker";
 import ColorSection from "@/components/ColorSection";
 import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
 import LandingHero from "@/components/LandingHero";
@@ -7,6 +8,8 @@ export default function Home() {
   return (
     <div className="">
       <LandingHero/>
+
+      <CampaignTicker campaignTickerText="Take Action"/>
       
       <ColorSection
         title="We have a plan"
