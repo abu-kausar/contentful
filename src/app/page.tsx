@@ -1,10 +1,13 @@
 "use client";
 import ColorSection from "@/components/ColorSection";
 import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
+import LandingHero from "@/components/LandingHero";
 
 export default function Home() {
   return (
     <div className="">
+      <LandingHero/>
+      
       <ColorSection
         title="We have a plan"
         subtitle="We leverage the brilliance of our local Black ecosystem to identify, elevate, and co-create Black equity
