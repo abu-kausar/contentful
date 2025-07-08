@@ -29,6 +29,7 @@
   --color-red: #DB3832;
   --color-bostonBlue: #3780BF;
   --color-yellow: #E5B946;
+  --color-gray-200: #4d4a4a;
 }
 
 html {
@@ -122,4 +123,55 @@ body {
 @keyframes scrolling {
     0% { transform: translateX(0); }
     100% { transform: translatex(-1000px); }
+}
+
+.split-arrow-carousel {
+  @apply pb-8 relative;
+}
+
+/* .split-arrow-carousel .swiper {
+  @apply pb-4; 
+} */
+
+.split-arrow-carousel .swiper-button-next {
+  @apply w-[45%] h-12;
+  @apply bg-no-repeat bg-center bg-green;
+  @apply focus:outline-none;
+  @apply right-0;
+  background-image: url(/Right_Arrow.png);
+  top: unset;
+  bottom: 0; 
+  margin-top: 0;
+}
+
+.split-arrow-carousel .swiper-button-prev {
+  @apply w-[45%] h-12;
+  @apply bg-no-repeat bg-center bg-red;
+  @apply focus:outline-none;
+  @apply left-0;
+  background-image: url(/Left_Arrow.png);
+  top: unset;
+  bottom: 0;
+  margin-top: 0;
+}
+
+.split-arrow-carousel .swiper-button-next::after,
+.split-arrow-carousel .swiper-button-prev::after {
+  @apply hidden;
+}
+
+.split-arrow-carousel .swiper-button-next.with-gap {
+  bottom: -0.5rem; /* Small gap below content */
+}
+
+.split-arrow-carousel .swiper-button-prev.with-gap {
+  bottom: -0.5rem; /* Small gap below content */
+}
+
+.split-arrow-carousel .swiper-button-next.overlay {
+  bottom: 1rem; /* Overlay on content */
+}
+
+.split-arrow-carousel .swiper-button-prev.overlay {
+  bottom: 1rem; /* Overlay on content */
 }

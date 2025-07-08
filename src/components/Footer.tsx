@@ -17,7 +17,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t-2 border-[#4d4a4a] px-8 md:px-16 pt-8 md:pt-16 w-full text-white">
+    <footer className="border-t-2 border-gray-200 px-8 md:px-16 pt-8 md:pt-16 w-full text-white">
       <div className="max-w-md mx-auto text-center pb-4">
         <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white">Join our Newsletter</h2>
         {/* <NewsletterForm /> */}

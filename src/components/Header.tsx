@@ -25,7 +25,7 @@ export default function Header() {
   );
 
   return (
-    <header className="min-h-20 border-b-2 border-[#4d4a4a] font-button text-white w-full">
+    <header className="min-h-20 border-b-2 border-gray-200 font-button text-white w-full">
       <nav className="w-full flex justify-between items-center h-full flex-wrap px-8 md:px-16">
         <Link href="/" className="h-20 py-4">
           <img className="h-full" src="/images/logo.svg" alt="KCEN logo" />

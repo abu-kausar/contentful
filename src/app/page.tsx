@@ -3,6 +3,7 @@ import CampaignTicker from "@/components/CampaignTicker";
 import ColorSection from "@/components/ColorSection";
 import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
 import LandingHero from "@/components/LandingHero";
+import SplitSectionBlogSlider from "@/components/SplitSectionBlogSlider";
 
 export default function Home() {
   return (
@@ -28,6 +29,8 @@ export default function Home() {
         backgroundColor="bg-red"
         showButton={true}
       />
+
+      <SplitSectionBlogSlider/>
 
       <ColorSection
         title="We Are Africatown"
