@@ -3,13 +3,14 @@ import { FC } from "react";
 
 interface BlogSlideProps {
   title: string;
+  slug: string;
   image: string;
   description: string;
 }
 
-export const BlogSlide: FC<BlogSlideProps> = ({ title, image, description }) => {
+export const BlogSlide: FC<BlogSlideProps> = ({ title, slug, image, description }) => {
   return (
-    <Link href="">
+    <Link href={slug}>
       <div className="text-white text-center">
         <img
           alt="blog image"

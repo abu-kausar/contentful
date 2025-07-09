@@ -70,8 +70,8 @@ export default function Header() {
               </a>
             </li>
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <a href="https://www.kingcountyequitynow.com/freedom/">
-                Freedom Actions
+              <a href="/solutions">
+                Solutions
               </a>
             </li>
           </div>

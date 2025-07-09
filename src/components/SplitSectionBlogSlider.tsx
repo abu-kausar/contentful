@@ -6,37 +6,42 @@ const featuredBlogPosts = [
   {
     index: 1,
     title: "Black Land Ownership",
+    slug:"/solutions/black-land-ownership",
     description:
       "When we say equity, we mean ownership. Thriving Black communities require control and agency over land. We prioritize Black land acquisition as a foundational pillar to our work.",
-    image: "/march.jpeg ",
+    image: "/land.jpg ",
   },
   {
     index: 2,
     title: "Black Education",
+    slug:"/solutions/black-education",
     description:
       "When we say equity, we mean ownership. Thriving Black communities require control and agency over land. We prioritize Black land acquisition as a foundational pillar to our work.",
-    image: "/april.jpg ",
+    image: "/education.jpg ",
   },
   {
     index: 3,
     title: "Black Finance",
+    slug:"/solutions/finance",
     description:
       "When we say equity, we mean ownership. Thriving Black communities require control and agency over land. We prioritize Black land acquisition as a foundational pillar to our work.",
-    image: "/may.jpg ",
+    image: "/finance.jpg ",
   },
   {
     index: 4,
     title: "Black Community Safety",
+    slug:"/solutions/community-safety",
     description:
       "When we say equity, we mean ownership. Thriving Black communities require control and agency over land. We prioritize Black land acquisition as a foundational pillar to our work.",
-    image: "/june.jpg ",
+    image: "/community.jpeg ",
   },
   {
     index: 5,
     title: "Black Health",
+    slug:"/solutions/black-health-care",
     description:
       "When we say equity, we mean ownership. Thriving Black communities require control and agency over land. We prioritize Black land acquisition as a foundational pillar to our work.When we say equity, we mean ownership. Thriving Black communities require control and agency over land. We prioritize Black land acquisition as a foundational pillar to our work.",
-    image: "/july.jpg ",
+    image: "/health.jpg ",
   },
 ];
 
@@ -65,6 +70,7 @@ const SplitSectionBlogSlider = () => {
             <BlogSlide
               key={index}
               title={blog.title}
+              slug={blog.slug}
               image={blog.image}
               description={blog.description}
             />

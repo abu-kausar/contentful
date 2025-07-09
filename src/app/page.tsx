@@ -12,27 +12,27 @@ const featuredBlogPosts = [
   {
     index: 1,
     title: "Black Community-Owned Health Institutions",
-    image: "/march.jpeg ",
+    image: "/community.jpeg ",
   },
   {
     index: 2,
     title: "Take All Freedom Actions",
-    image: "/april.jpg ",
+    image: "/land.jpg ",
   },
   {
     index: 3,
     title: "Help Invest $300M in the Black Community",
-    image: "/may.jpg ",
+    image: "/education.jpg ",
   },
   {
     index: 4,
     title: "Help Build the Family Empowerment Center",
-    image: "/june.jpg ",
+    image: "/finance.jpg ",
   },
   {
     index: 5,
     title: "Support Black Farming Liberation",
-    image: "/july.jpg ",
+    image: "/health.jpg ",
   },
 ];
 
