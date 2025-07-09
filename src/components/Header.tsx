@@ -70,9 +70,9 @@ export default function Header() {
               </a>
             </li>
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <a href="/solutions">
+              <Link href="/solutions">
                 Solutions
-              </a>
+              </Link>
             </li>
           </div>
           <li className="flex justify-center items-center hover:text-yellow">
