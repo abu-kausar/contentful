@@ -15,7 +15,7 @@ const LargeVideo = () => {
       controls
       loop
       playsInline
-      className="focus:outline-none w-full h-full object-fill"
+      className="focus:outline-none w-full min-h-[300px] object-contain"
       onLoadedData={isVideoLoaded ? undefined : handleLoadedData}
     >
       <source
@@ -29,7 +29,7 @@ const LargeVideo = () => {
 const LandingHero = () => {
   return (
     <div className="flex flex-col md:items-center md:flex-row md:min-h-3/4-screen">
-      <div className="w-full md:w-1/2 bg-texture border-none flex justify-center items-center py-5 pb-10"
+      <div className="w-full md:w-1/2 bg-texture border-none flex justify-center items-center py-5 md:pb-10"
       >
         <div
           className="px-8 md:px-16 opacity-100 transition-opacity text-white"
@@ -56,7 +56,7 @@ const LandingHero = () => {
       </div>
 
       <div
-        className="w-full md:w-1/2 h-auto opacity-100 transition-opacity pr-10"
+        className="w-full md:w-1/2 opacity-100 transition-opacity md:pr-10"
       >
         <LargeVideo />
       </div>
