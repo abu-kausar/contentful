@@ -43,7 +43,7 @@ export default function Home() {
     <div className="">
       <LandingHero />
 
-      <CampaignTicker campaignTickerText="Take Action" />
+      <CampaignTicker campaignTickerText="KING COUNTY EQUITY NOW" />
 
       <ColorSection
         title="We have a plan"

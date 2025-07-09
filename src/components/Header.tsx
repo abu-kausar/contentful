@@ -53,7 +53,7 @@ export default function Header() {
         >
           <div className="flex flex-col md:flex-row justify-evenly md:justify-end flex-nowrap md:flex-wrap flex-grow md:py-5 md:pl-5 text-center md:text-left tracking-wide">
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <a href="/equity-solutions">Black Equity Solutions</a>
+              <a href="/about">About</a>
             </li>
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
               <a
