@@ -3,41 +3,41 @@ import LandingHero from "@/components/LandingHero";
 import SplitSectionBlogSlider from "@/components/SplitSectionBlogSlider";
 import CampaignTicker from "@/components/CampaignTicker";
 import ColorSection from "@/components/ColorSection";
-import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
-import ArrowsCarousel from "@/components/ArrowCarousel";
-import Link from "next/link";
-import { useState } from "react";
+// import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
+// import ArrowsCarousel from "@/components/ArrowCarousel";
+// import Link from "next/link";
+// import { useState } from "react";
 
-const featuredBlogPosts = [
-  {
-    index: 1,
-    title: "Black Community-Owned Health Institutions",
-    image: "/community.jpeg ",
-  },
-  {
-    index: 2,
-    title: "Take All Freedom Actions",
-    image: "/land.jpg ",
-  },
-  {
-    index: 3,
-    title: "Help Invest $300M in the Black Community",
-    image: "/education.jpg ",
-  },
-  {
-    index: 4,
-    title: "Help Build the Family Empowerment Center",
-    image: "/finance.jpg ",
-  },
-  {
-    index: 5,
-    title: "Support Black Farming Liberation",
-    image: "/health.jpg ",
-  },
-];
+// const featuredBlogPosts = [
+//   {
+//     index: 1,
+//     title: "Black Community-Owned Health Institutions",
+//     image: "/community.jpeg ",
+//   },
+//   {
+//     index: 2,
+//     title: "Take All Freedom Actions",
+//     image: "/land.jpg ",
+//   },
+//   {
+//     index: 3,
+//     title: "Help Invest $300M in the Black Community",
+//     image: "/education.jpg ",
+//   },
+//   {
+//     index: 4,
+//     title: "Help Build the Family Empowerment Center",
+//     image: "/finance.jpg ",
+//   },
+//   {
+//     index: 5,
+//     title: "Support Black Farming Liberation",
+//     image: "/health.jpg ",
+//   },
+// ];
 
 export default function Home() {
-  const [selected, setSelected] = useState("recent");
+  // const [selected, setSelected] = useState("recent");
 
   return (
     <div className="">
