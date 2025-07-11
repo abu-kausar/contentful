@@ -44,14 +44,14 @@ const BlackCommunityPage = () => {
             stance.
           </p>
         </div>
-        <div className="flex items-center justify-center">
+        {/* <div className="flex items-center justify-center">
           <a
             href=""
             className="bg-red text-black px-5 py-2 rounded-full text-base uppercase font-bold hover:bg-green- hover:text-white"
           >
             take action
           </a>
-        </div>
+        </div> */}
       </div>
       <h2 className="p-8 md:p-16 text-white font-heading font-bold text-5xl uppercase tracking-wide py-6">
         Related Links

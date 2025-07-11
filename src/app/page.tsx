@@ -1,10 +1,10 @@
 "use client";
-import ArrowsCarousel from "@/components/ArrowCarousel";
+import LandingHero from "@/components/LandingHero";
+import SplitSectionBlogSlider from "@/components/SplitSectionBlogSlider";
 import CampaignTicker from "@/components/CampaignTicker";
 import ColorSection from "@/components/ColorSection";
 import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
-import LandingHero from "@/components/LandingHero";
-import SplitSectionBlogSlider from "@/components/SplitSectionBlogSlider";
+import ArrowsCarousel from "@/components/ArrowCarousel";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -54,7 +54,7 @@ export default function Home() {
         showButton={false}
       />
 
-      <section>
+      {/* <section>
         <div className="flex w-full px-8 md:px-12 mt-8 flex-col md:flex-row items-start md:items-center justify-center md:justify-start gap-x-2">
           <h2 className="font-button text-xl uppercase tracking-wide pb-4 mr-5 text-white mt-4">
             Recent Actions
@@ -93,7 +93,7 @@ export default function Home() {
             </Link>
           ))}
         </ArrowsCarousel>
-      </section>
+      </section> */}
 
       <ColorSection
         title="#PaytheFee"
@@ -117,7 +117,7 @@ export default function Home() {
         showButton={false}
       />
 
-      <FeaturedSectionWithVideo youTubeLink="https://www.youtube.com/watch?v=O8rL4YcPH1g" />
+      {/* <FeaturedSectionWithVideo youTubeLink="https://www.youtube.com/watch?v=O8rL4YcPH1g" /> */}
 
       <ColorSection
         title="Join the team"

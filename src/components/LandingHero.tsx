@@ -1,28 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
 const LargeVideo = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
-  const handleLoadedData = () => {
-    setIsVideoLoaded(true);
-  };
-
   return (
-    <video
-      autoPlay
-      muted
-      controls
-      loop
-      playsInline
-      className="focus:outline-none w-full min-h-[300px] object-contain"
-      onLoadedData={isVideoLoaded ? undefined : handleLoadedData}
-    >
-      <source
-        src="https://d2j8oo2nydfmnp.cloudfront.net/sizzle-less-cropped.m4v"
-        type="video/mp4"
-      />
-    </video>
+    <div className="relative w-full video-height overflow-hidden lg:py-2 xl:py-5">
+      <video
+        autoPlay
+        muted
+        controls
+        loop
+        playsInline
+        className="w-full h-full object-cover object-center focus:outline-none"
+      >
+        <source
+          src="https://d2j8oo2nydfmnp.cloudfront.net/sizzle-less-cropped.m4v"
+          type="video/mp4"
+        />
+      </video>
+    </div>
   );
 };
 

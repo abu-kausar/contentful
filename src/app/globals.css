@@ -229,3 +229,48 @@ body {
       max-width: 96rem /* 1536px */;
   }
 }
+
+.video-height {
+  @media (width >= 600px) {
+    height: 428px;
+  }
+  @media (width >= 768px) {
+    height: 262px;
+  }
+  @media (width >= 820px) {
+    height: 282px;
+  }
+  @media (width >= 896px) {
+    height: 311px;
+  }
+  @media (width >= 992px) {
+    height: 348px;
+  }
+  @media (width >= 1024px) {
+    height: 360px;
+  }
+  @media (width >= 1280px) {
+    height: 458px;
+  }
+  @media (width >= 1366px) {
+    height: 491px;
+  }
+  @media (width >= 1440px) {
+    height: 519px;
+  }
+  @media (width >= 1536px) {
+    height: 556px;
+  }
+  @media (width >= 1700px) {
+    height: 618px;
+  }
+  @media (width >= 1920px) {
+    height: 700px;
+  }
+  @media (width >= 2000px) {
+    height: 733px;
+  }
+  @media (width >= 2100px) {
+    height: 771px;
+  }
+}
