@@ -1,6 +1,7 @@
 import React from "react";
 import { BlogSlide } from "./BlogSlide";
 import { SplitArrowCarousel } from "./SplitArrowCarousel";
+// import { fetchEntries } from "@/lib/contentful";
 
 const featuredBlogPosts = [
   {
@@ -46,6 +47,15 @@ const featuredBlogPosts = [
 ];
 
 const SplitSectionBlogSlider = () => {
+  // const entries = await fetchEntries<SolutionsPageFields>("solutionPage");
+
+  // if (entries.length === 0) {
+  //   return <div>No content found.</div>;
+  // }
+
+  // const solutions = entries;
+  // console.log(solutions);
+
   return (
     <section className="border-t-2 border-b-2 border-gray-200 flex flex-col md: items-center md:flex-row">
       <div

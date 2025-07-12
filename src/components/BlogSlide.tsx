@@ -1,12 +1,6 @@
+import { BlogSlideProps } from "@/app/utils/types";
 import Link from "next/link";
 import { FC } from "react";
-
-interface BlogSlideProps {
-  title: string;
-  slug: string;
-  image: string;
-  description: string;
-}
 
 export const BlogSlide: FC<BlogSlideProps> = ({ title, slug, image, description }) => {
   return (

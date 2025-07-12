@@ -1,17 +1,29 @@
+import { fetchEntries } from "@/lib/contentful";
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import { AboutPageFields } from "../utils/types";
 
-const AboutPage = () => {
+const AboutPage = async () => {
+  const entries = await fetchEntries<AboutPageFields>("blogPost");
+
+  if (entries.length === 0) {
+    return <div>No content found.</div>;
+  }
+
+  const about = entries[0].fields;
+  const heroImage = about.heroImageResolved;
+
   return (
     <div className="max-w-screen-lg mx-auto p-8 md:py-16 text-white">
       <img
-        src="/images/about.jpg"
+        src={`https:${heroImage.fields.file.url}`}
         alt="about hero image"
         className="top-0 left-0 w-full h-full object-cover object-center"
       />
       <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white text-center py-6">
-        about
+        {about?.title}
       </h2>
-      <div className="text-xl py-8 text-justify font-markdown-body">
+      {/* <div className="text-xl py-8 text-justify font-markdown-body">
         <h3 className="uppercase font-button text-2xl">About.</h3>
         <p className="pb-4">
           <a
@@ -81,7 +93,10 @@ const AboutPage = () => {
             Black health equity solutions
           </li>
         </ul>
-      </div>
+      </div> */}
+      <article className="markdown text-xl py-8 text-justify use-source-sans-pro">
+        <ReactMarkdown>{about.body}</ReactMarkdown>
+      </article>
     </div>
   );
 };
