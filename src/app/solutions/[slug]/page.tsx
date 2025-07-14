@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { SolutionsPageFields } from "@/app/utils/types";
 import { fetchEntries } from "@/lib/contentful";
@@ -23,7 +24,7 @@ const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         <img
           src={`https:${heroImage.fields.file.url}`}
           alt="land owners image"
-          className="top-0 left-0 w-full h-full object-cover object-center"
+          className="top-0 left-0 w-full h-[245px] sm:h-[324px] md:h-[360px] lg:h-[503px] object-cover object-center"
         />
         <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white text-center py-6">
           {content.title}
