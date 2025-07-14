@@ -4,10 +4,11 @@ import { fetchEntries } from "@/lib/contentful";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-const SlugPage = async ({ params }: { params: { slug: string } }) => {
+const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
   const entries = await fetchEntries<SolutionsPageFields>("solutionPage");
 
-  const entry = entries.find((e) => e.fields.slug === params.slug);
+  const entry = entries.find((e) => e.fields.slug === slug);
 
   if (!entry) {
     return <div>No content found.</div>;
