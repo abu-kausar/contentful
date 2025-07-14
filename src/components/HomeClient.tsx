@@ -23,7 +23,6 @@ export default function HomeClient({
   volunteerSectionData: any;
 }) {
   // const [selected, setSelected] = useState("recent");
-  console.log(landingData);
 
   if (!landingData) {
     return <div>No content found.</div>;
