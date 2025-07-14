@@ -108,7 +108,3 @@ export interface HomeClientProps{
   solutionEntries: string;
   volunteerSectionData: string;
 }
-
-export interface SlugProps {
-  params: { slug: string };
-}

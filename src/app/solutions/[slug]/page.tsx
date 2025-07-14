@@ -1,9 +1,10 @@
-import { SlugProps, SolutionsPageFields } from "@/app/utils/types";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { SolutionsPageFields } from "@/app/utils/types";
 import { fetchEntries } from "@/lib/contentful";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-const SlugPage = async ({ params }: SlugProps) => {
+const SlugPage = async ({ params }: { params: { slug: string } }) => {
   const entries = await fetchEntries<SolutionsPageFields>("solutionPage");
 
   const entry = entries.find((e) => e.fields.slug === params.slug);
