@@ -1,12 +1,10 @@
+"use client"
+import { CampaignTickerProps } from "@/app/utils/types";
 import React from "react";
 
-interface CampaignTickerProps {
-    campaignTickerText: string;
-}
-
-const CampaignTicker = ({ campaignTickerText }: CampaignTickerProps) => (
-  <a target="_blank" rel="noreferrer">
-    <div className="marquee flex justify-center items-center">
+const CampaignTicker = ({ campaignTickerText, marqueeTickerLink }: CampaignTickerProps) => (
+  <a href={marqueeTickerLink} target="_blank" rel="noreferrer">
+    <div className="marquee flex justify-center items-center cursor-pointer">
       <div className="marquee-content">
         {[...Array(25)].map((val, ind) => (
           <div className="marquee-item" key={ind}>

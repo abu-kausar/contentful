@@ -45,6 +45,70 @@ export interface AboutPageFields {
   };
 }
 
+export interface HomePageFields {
+  mainSplashHeadline: string;
+  mainSplashDescription: string;
+  marqueeTickerText: string;
+  marqueeTickerUrl: string;
+  firstBannerSectionHeadlineDescription: {
+    sys: {
+      id: string;
+    };
+  };
+  payTheFeeSection: {
+    sys: {
+      id: string;
+    };
+  };
+  whatWeDoSection: {
+    sys: {
+      id: string;
+    };
+  };
+  volunteerSection: {
+    sys: {
+      id: string;
+    };
+  };
+  heroImage: {
+    fields: {
+      file: {
+        url: string;
+      };
+      title: string;
+    };
+  };
+}
+
+export interface LandingHeroFields {
+  title: string;
+  description: string;
+}
+
+export interface CampaignTickerProps {
+    campaignTickerText: string;
+    marqueeTickerLink: string;
+}
+
+export interface EquitySectionProps{
+  title: string;
+  description: string;
+}
+
+export interface PayTheFeeSectionProps{
+  title: string;
+  description: string;
+}
+
+export interface HomeClientProps{
+  landingData: string;
+  equitySectionData: string;
+  payTheFeeSectionData: string;
+  whatWeDoSectionData: string;
+  solutionEntries: string;
+  volunteerSectionData: string;
+}
+
 export interface SlugProps {
   params: { slug: string };
 }
