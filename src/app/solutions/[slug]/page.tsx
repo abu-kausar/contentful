@@ -4,6 +4,7 @@ import { SolutionsPageFields } from "@/app/utils/types";
 import { fetchEntries } from "@/lib/contentful";
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
@@ -29,38 +30,10 @@ const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white text-center py-6">
           {content.title}
         </h2>
-        <article className="markdown text-xl py-8 text-justify use-source-sans-pro">
-          <ReactMarkdown>{content.body}</ReactMarkdown>
+        <article className="markdown text-xl py-8 text-justify">
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content.body}</ReactMarkdown>
         </article>
-        {/*<div className="text-xl py-8 text-justify font-markdown-body">
-          <p className="pb-4">
-            When we say equity, we mean ownership. Thriving Black communities
-            require control and agency over land. We prioritize Black land
-            acquisition as a foundational pillar to our work.
-            <br />
-            <br />
-            Seattle, Martin Luther King Jr. County has historically been the
-            base for the vast majority of Washington State&apos;s Black
-            population. Decades of racist covenants and anti-Black racial
-            hostility narrowed places where the Black community could call home.
-            In spite of such hostile and adverse circumstances, Blacks in
-            Washington created vibrant communities in the spaces afforded,
-            particularly in the Central District of Seattle and South Seattle.
-            <br />
-            <br />
-            As demand for land grows at an unprecedented pace, the rapid
-            gentrification and exclusion of Blacks from Seattle is important not
-            merely due to the dismantling of historical Black cultural and
-            societal spaces, but also due to the socio-economic, health, wealth,
-            and education implications resulting from Blacks being pushed out of
-            the State&apos;s largest economic and cultural engine.
-            <br />
-            <br />
-            Below is a list of active Black land acquisition campaigns. Read,
-            engage and tap-in below to support immediate opportunities to impact
-            the material conditions of Black peoples locally, right now.
-          </p>
-        </div>
+        {/* TODO: add call to action
          <div className="flex items-center justify-center">
           <a
             href=""

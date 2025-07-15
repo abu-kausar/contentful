@@ -30,7 +30,7 @@ const LandingHero = ({ title, description } : LandingHeroFields) => {
           <h1 className="font-heading font-bold text-8xl md:text-9xl uppercase tracking-wide">
             {title}
           </h1>
-          <div className="markdown font-body text-xl text-white py-8">
+          <div className="font-body text-xl text-white py-8">
             {description}
           </div>
           <a href="/recentwins" rel="noreferrer">

@@ -19,7 +19,7 @@ export const BlogSlide: FC<BlogSlideProps> = ({
         <h2 className="font-button text-2xl uppercase tracking-wide pb-4">
           {title}
         </h2>
-        <div className="markdown font-body text-xl text-white px-4 pb-16">
+        <div className="font-body text-xl text-white px-4 pb-16">
           {description}
         </div>
       </div>

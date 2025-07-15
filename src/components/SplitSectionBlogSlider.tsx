@@ -22,7 +22,7 @@ const SplitSectionBlogSlider = ({
           <h1 className="w-full font-heading font-bold text-8xl md:text-9xl uppercase tracking-wide">
             {data.headline}
           </h1>
-          <div className="markdown font-body text-xl text-white py-8">
+          <div className="font-body text-xl text-white py-8">
             {data.description}
           </div>
         </div>

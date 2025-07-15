@@ -61,7 +61,7 @@ const EquitySolutionsPage = async () => {
                   <h2 className="font-button text-2xl uppercase tracking-wide md:pb-4">
                     {solution.fields.title}
                   </h2>
-                  <div className="markdown font-body text-xl hidden md:block">
+                  <div className="font-body text-xl hidden md:block">
                     <p>{solution.fields.description}</p>
                   </div>
                 </div>

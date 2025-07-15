@@ -274,3 +274,80 @@ body {
     height: 771px;
   }
 }
+
+.markdown.use-source-sans-pro {
+    @apply font-markdown-body;
+}
+
+.markdown h1 {
+    @apply font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white text-center py-4;
+}
+
+.markdown h2 {
+    @apply font-heading font-bold text-3xl md:text-5xl uppercase tracking-wide text-white py-4;
+}
+
+.markdown h3 {
+  @apply font-button text-2xl uppercase tracking-wide py-2;
+}
+
+.markdown blockquote {
+    @apply p-4 my-4 italic border-l-4 border-gray-200 text-xl;
+}
+
+.markdown ul {
+    @apply list-disc list-inside pl-4 md:pl-8;
+}
+
+.markdown ol {
+    @apply list-decimal list-inside pl-8;
+}
+
+.markdown li {
+    @apply mb-3;
+    padding-left: 25px;
+    text-indent: -22px;
+}
+
+.markdown li p {
+    display: inline;
+}
+
+.markdown strong {
+    @apply font-bold;
+}
+
+.markdown p {
+    @apply pb-4;
+}
+
+.markdown small {
+    @apply text-xs;
+}
+
+.markdown p.small {
+    @apply text-xs;
+    @apply pt-4;
+}
+
+.markdown p.small.caption {
+    @apply text-xs;
+    @apply pt-2;
+    @apply italic;
+}
+
+.markdown hr {
+    @apply pb-2;
+    border-top-width: 2px;
+    border-color: white;
+}
+
+.markdown a:not(.article-preview-horizontal):not(.article-preview) {
+    text-decoration: underline;
+    @apply text-yellow;
+    @apply hover:text-yellow-500;
+}
+
+.markdown a.article-preview p, .markdown a.article-preview-horizontal p {
+    @apply text-base
+}
