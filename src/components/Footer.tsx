@@ -17,12 +17,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t-2 border-gray-200 px-8 md:px-16 pt-8 md:pt-16 w-full text-white">
+    <footer className="bg-[#0E0E0E] px-8 md:px-16 pt-8 md:pt-16 w-full text-white">
       <div className="max-w-md mx-auto text-center pb-4">
         <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white">Join our Newsletter</h2>
         <NewsletterForm />
       </div>
-      <div className="my-4 flex flex-col md:flex-row justify-between items-center md:items-end">
+      <div className="py-4 flex flex-col md:flex-row justify-between items-center md:items-end">
         <div className="flex h-6 mb-6 md:mb-1">
           <ImageLink
             href="http://instagram.com/kingcountyequitynow"

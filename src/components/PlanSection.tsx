@@ -15,8 +15,8 @@ const PlanSection = ({ title, subtitle }: PlanFields) => {
         <p className="font-body text-xl font-semibold mb-8 leading-relaxed">{subtitle}</p>
 
         {/* Box Section */}
-        <div className="border-2 border-yellow divide-y-2 divide-yellow">
-          <div className="grid grid-cols-2 font-button uppercase md:text-left divide-x-2 divide-yellow">
+        <div className="border-4 border-yellow divide-y-4 divide-yellow">
+          <div className="grid grid-cols-2 font-button uppercase md:text-left divide-x-4 divide-yellow">
             <div className="p-6 flex justify-center items-center gap-2">
               <div className="bg-red p-3 rounded-full">
                 <img src="/reading-book.svg" alt="reading book" />

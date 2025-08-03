@@ -8,6 +8,7 @@ import DescriptionSection from "./DescriptionSection";
 import PlanSection from "./PlanSection";
 import BuildingPowerSection from "./BuildingPowerSection";
 import WhatWeDoSection from "./WhatWeDoSection";
+import JoinSection from "./JoinSection";
 // import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
 // import ArrowsCarousel from "@/components/ArrowCarousel";
 
@@ -174,13 +175,9 @@ export default function HomeClient({
 
       <BuildingPowerSection />
 
-      <ColorSection
+      <JoinSection
         title={volunteerSectionData.headline}
         subtitle={volunteerSectionData.blurb}
-        buttonLabel="Tap In"
-        onButtonClick={() => console.log("Sponsorship clicked!")}
-        backgroundColor="bg-green"
-        showButton={true}
       />
     </div>
   );
