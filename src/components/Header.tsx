@@ -51,9 +51,11 @@ export default function Header() {
             menuOpen ? "max-h-screen py-4 visible" : "max-h-0 invisible md:visible md:max-h-20"
           } overflow-hidden`}
         >
-          <div className="flex flex-col md:flex-row justify-evenly md:justify-end flex-nowrap md:flex-wrap flex-grow md:py-5 md:pl-5 text-center md:text-left tracking-wide">
+          <div className="flex flex-col md:flex-row justify-evenly md:justify-end uppercase flex-nowrap md:flex-wrap flex-grow md:py-5 md:pl-5 text-center md:text-left tracking-wide">
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <a href="/about">About</a>
+              <Link href="/solutions">
+                Black Equity Solutions
+              </Link>
             </li>
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
               <a
@@ -71,7 +73,7 @@ export default function Header() {
             </li>
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
               <Link href="/solutions">
-                Solutions
+                Freedom Actions
               </Link>
             </li>
           </div>
