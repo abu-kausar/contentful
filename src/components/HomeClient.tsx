@@ -1,7 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import LandingHero from "@/components/LandingHero";
-import SplitSectionBlogSlider from "@/components/SplitSectionBlogSlider";
 import CampaignTicker from "@/components/CampaignTicker";
 import ColorSection from "@/components/ColorSection";
 import Hero from "./Hero";
@@ -167,7 +166,7 @@ export default function HomeClient({
         title={equitySectionData.headline}
         subtitle={equitySectionData.blurb}
       />
-      
+
       <WhatWeDoSection
         data={whatWeDoSectionData}
         solutionEntries={solutionEntries}
