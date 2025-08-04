@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import Link from "next/link";
 import { JSX, useState } from "react";
 
 const WhatWeDoSection = ({
@@ -102,13 +103,26 @@ const WhatWeDoSection = ({
             )}
           </div>
 
-          {/* Image Section */}
+          {/* Image Section with overlay on hover */}
           <div className="flex items-center justify-center">
-            <img
-              src={`https:${activeItem.fields.heroImageResolved.fields.file.url}`}
-              alt={activeItem.fields.title}
-              className="w-full h-[500px] object-cover transition duration-500 ease-in-out"
-            />
+            <Link
+              href={`/solutions/${activeItem.fields.slug}`}
+              className="relative group w-full h-[500px] overflow-hidden"
+            >
+              {/* The image */}
+              <img
+                src={`https:${activeItem.fields.heroImageResolved.fields.file.url}`}
+                alt={activeItem.fields.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+
+              {/* Overlay and text */}
+              <div className="absolute inset-0 bg-[#000000A8] bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white text-2xl lg:text-4xl font-normal font-button uppercase">
+                  View Details
+                </span>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
