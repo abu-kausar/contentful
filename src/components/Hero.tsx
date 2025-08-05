@@ -6,8 +6,8 @@ interface LandingHeroFields {
 
 const Hero = ({ title }: LandingHeroFields) => {
   return (
-    <div className="bg-black flex flex-col gap-9 md:items-center md:justify-center md:h-[700px] text-white">
-      <h1 className="font-heading font-bold text-8xl md:text-[140px] uppercase tracking-wide">
+    <div className="bg-black flex flex-col gap-9 items-center justify-center h-[400px] sm:h-[500px] md:h-[700px] text-white">
+      <h1 className="font-heading font-bold text-6xl sm:text-8xl lg:text-[140px] uppercase tracking-wide">
         {title}
       </h1>
 

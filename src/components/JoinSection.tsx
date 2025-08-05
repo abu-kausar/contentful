@@ -32,20 +32,20 @@ const JoinSection = ({ title, subtitle }: JoinSectionProps) => {
       />
 
       {/* Overlay content */}
-      <div className="absolute inset-0 z-10 flex flex-col lg:flex-row items-center justify-between px-6 lg:px-[20%] py-10">
+      <div className="absolute inset-0 z-10 flex flex-row items-center justify-between pl-[12%] pr-[15%] sm:px-[20%]  ">
         {/* Left side content */}
-        <div className="text-white max-w-md text-left space-y-6">
-          <h2 className="text-8xl lg:text-[119px] font-bold font-heading uppercase">
+        <div className="text-white max-w-md text-left md:space-y-4 lg:space-y-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold font-heading uppercase">
             {title}
           </h2>
-          <p className="text-xl">{subtitle}</p>
-          <button className="mt-2 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-medium py-5 px-[50px] cursor-pointer rounded-full">
+          <p className="text-lg xl:text-xl">{subtitle}</p>
+          <button className="mt-auto lg:mt-8 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-6 sm:px-9 lg:px-[50px] cursor-pointer rounded-full">
             Tap In
           </button>
         </div>
 
         {/* Right side play button */}
-        <div className="relative mt-10 lg:mt-0">
+        <div className="relative lg:mt-0">
           <button
             onClick={() => setShowVideo(true)}
             className="w-12 lg:w-20 h-12 lg:h-20 bg-red-500 text-white rounded-full flex items-center justify-center text-xl shadow-lg hover:scale-105 transition cursor-pointer"

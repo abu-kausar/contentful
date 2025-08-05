@@ -23,17 +23,17 @@ const WhatWeDoSection = ({
   );
 
   return (
-    <section className="relative bg-texture px-4 md:px-12 lg:px-[128px] py-16 overflow-hidden">
+    <section className="relative bg-texture px-5 lg:px-20 xl:px-32 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 overflow-hidden">
       <img
         src="/overlay.png"
         alt="Overlay"
         className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none"
       />
       <div className="relative z-10 w-full mx-auto">
-        <h2 className="text-[128px] font-medium font-heading uppercase text-white">
+        <h2 className="text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase text-white mb-5 lg:mb-8">
           {data.headline}
         </h2>
-        <p className="mb-10 text-xl font-normal text-white leading-7">
+        <p className="mb-6 lg:mb-10 text-lg xl:text-xl font-normal text-white leading-7">
           {data.description}
         </p>
 
@@ -79,7 +79,7 @@ const WhatWeDoSection = ({
 
                         {/* Title */}
                         <h3
-                          className={`font-button uppercase text-xl font-medium leading-7 ${
+                          className={`font-button uppercase text-lg xl:text-xl font-medium leading-7 ${
                             activeId === item.fields.slug
                               ? "text-yellow"
                               : "text-white"
@@ -93,7 +93,7 @@ const WhatWeDoSection = ({
                     {/* Description */}
                     {activeId === item.fields.slug &&
                       item.fields.description && (
-                        <p className="text-white text-xl font-normal leading-7 pl-0 pr-2 pb-3">
+                        <p className="text-white text-lg xl:text-xl font-normal leading-7 pl-0 pr-2 pb-3">
                           {item.fields.description}
                         </p>
                       )}
@@ -107,7 +107,7 @@ const WhatWeDoSection = ({
           <div className="flex items-center justify-center">
             <Link
               href={`/solutions/${activeItem.fields.slug}`}
-              className="relative group w-full h-[500px] overflow-hidden"
+              className="relative group w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden"
             >
               {/* The image */}
               <img

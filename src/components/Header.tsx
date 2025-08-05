@@ -86,7 +86,7 @@ export default function Header() {
             <button
               data-campaign-id="4028"
               data-custom="true"
-              className="commitchange-donate focus:outline-none rounded-full font-button py-2 uppercase tracking-wider text-black bg-yellow px-6 mb-4 md:mb-0"
+              className="commitchange-donate focus:outline-none rounded-full font-button py-2 uppercase tracking-wider text-black bg-yellow px-6 mt-5 md:mt-0 mb-4 md:mb-0 cursor-pointer"
             >
               Donate
             </button>
