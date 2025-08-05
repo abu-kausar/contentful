@@ -76,6 +76,11 @@ export default function Header() {
                 Freedom Actions
               </Link>
             </li>
+            <li className="flex justify-center items-center hover:text-yellow md:pr-5">
+              <Link href="/about">
+                About Us
+              </Link>
+            </li>
           </div>
           <li className="flex justify-center items-center hover:text-yellow">
             <button
