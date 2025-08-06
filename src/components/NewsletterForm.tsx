@@ -112,7 +112,7 @@ const NewsletterForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="bg-white rounded-full px-2 md:px-4 py-2 md:py-3 w-full md:w-[540px] text-black"
+        className="bg-white rounded-full px-2 md:px-4 py-2 md:py-3 w-full xl:w-[540px] text-black"
       />
       <button
         type="submit"

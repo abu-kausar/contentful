@@ -87,7 +87,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between items-start gap-8 relative border-b border-white/40 pb-10">
         {/* Contact Section */}
         <div className="md:w-1/2 flex flex-col gap-5 md:gap-6">
-          <h3 className="text-white xl:text-5xl uppercase font-heading font-bold">
+          <h3 className="text-white text-3xl md:text-4xl xl:text-5xl uppercase font-heading font-bold">
             Contact Us
           </h3>
           <div className="flex gap-3 items-center">
