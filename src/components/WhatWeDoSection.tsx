@@ -30,7 +30,7 @@ const WhatWeDoSection = ({
         className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
       />
       <div className="relative z-10 w-full mx-auto">
-        <h2 className="text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase text-white mb-5 lg:mb-8">
+        <h2 className="text-7xl lg:text-8xl xl:text-9xl font-medium font-heading text-center md:text-left uppercase text-white mb-5 lg:mb-8">
           {data.headline}
         </h2>
         <p className="mb-6 lg:mb-10 text-lg xl:text-xl font-normal text-white leading-7">

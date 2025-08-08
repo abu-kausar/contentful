@@ -84,10 +84,10 @@ const Footer = () => {
   return (
     <footer className="bg-[url('/images/footer/footerOverlay.png')] bg-cover bg-center text-white w-full px-4 md:px-[90px] pt-12 md:pt-21">
       {/* Top section with background image effect */}
-      <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 relative border-b border-[#595959] pb-10 md:pb-18">
+      <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 md:gap-8 relative border-b border-[#595959] pb-10 md:pb-18">
         {/* Contact Section */}
         <div className="md:w-1/2 flex flex-col gap-5 md:gap-6">
-          <h3 className="text-white text-3xl md:text-4xl xl:text-5xl uppercase font-heading font-bold">
+          <h3 className="text-center md:text-left text-white text-4xl md:text-4xl xl:text-5xl uppercase font-heading font-bold">
             Contact Us
           </h3>
           <div className="flex gap-3 items-center">
@@ -138,7 +138,7 @@ const Footer = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-3 h-6">
+          <div className="flex gap-3 h-6 mx-auto md:mx-0">
             <ImageLink
               href="http://instagram.com/kingcountyequitynow"
               src="/images/footer/ig.svg"
@@ -164,7 +164,7 @@ const Footer = () => {
 
         {/* Newsletter Form */}
         <div className="md:pl-10 md:w-1/2">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase tracking-wide mb-4 xl:mb-10">
+          <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase tracking-wide text-center md:text-left mb-4 xl:mb-10">
             Join our Newsletter
           </h2>
           <NewsletterForm />

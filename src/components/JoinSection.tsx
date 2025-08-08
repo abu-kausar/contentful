@@ -101,11 +101,11 @@ const JoinSection = ({ title, subtitle }: JoinSectionProps) => {
       {/* Overlay content */}
       <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
         <div className="text-white max-w-md text-center space-y-2 lg::space-y-4 xl:space-y-5">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl xl:leading-32 font-bold font-heading uppercase leading-tight">
+          <h2 className="text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase">
             {title}
           </h2>
           <p className="text-base sm:text-lg xl:text-xl">{subtitle}</p>
-          <button className="bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-2 sm:py-3 md:py-4 lg:py-5 px-4 sm:px-6 md:px-9 lg:px-[50px] cursor-pointer rounded-full text-sm sm:text-base">
+          <button className=" bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full">
             Tap In
           </button>
         </div>

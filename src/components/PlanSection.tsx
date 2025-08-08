@@ -92,7 +92,7 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
           {" "}
           {/* ✅ h-full + vertical spacing */}
           <div>
-            <p className="font-heading text-5xl md:text-6xl lg:text-7xl xl:text-[96px] xl:leading-16 font-medium uppercase mb-5 xl:mb-10">
+            <p className="text-center md:text-left text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase mb-5">
               {title}
             </p>
             <p className="font-body text-lg xl:text-xl font-semibold mb-4 md:mb-8 leading-relaxed">
@@ -137,7 +137,7 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
             </div>
           </div>
           {/* Button aligned to bottom */}
-          <button className="w-[210px] mt-6 lg:mt-8 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-6 sm:px-9 lg:px-[50px] cursor-pointer rounded-full">
+          <button className="max-w-[242px] mt-6 lg:mt-8 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full mx-auto md:mx-0">
             Learn More
           </button>
         </div>
