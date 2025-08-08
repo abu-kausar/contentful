@@ -12,10 +12,10 @@ import {
 
 const icons = [
   RiMoneyDollarCircleLine,
-  RiGraduationCapFill,
-  RiMoneyDollarCircleLine,
-  RiShirtLine,
   RiHospitalFill,
+  RiGraduationCapFill,
+  RiShirtLine,
+  RiMoneyDollarCircleLine,
 ];
 
 const WhatWeDoSection = ({
