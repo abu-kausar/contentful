@@ -82,9 +82,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0E0E0E] text-white w-full px-4 md:px-16 pt-10">
+    <footer className="bg-[url('/images/footer/footerOverlay.png')] bg-cover bg-center text-white w-full px-4 md:px-[90px] pt-12 md:pt-21">
       {/* Top section with background image effect */}
-      <div className="flex flex-col md:flex-row justify-between items-start gap-8 relative border-b border-white/40 pb-10">
+      <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 relative border-b border-[#595959] pb-10 md:pb-18">
         {/* Contact Section */}
         <div className="md:w-1/2 flex flex-col gap-5 md:gap-6">
           <h3 className="text-white text-3xl md:text-4xl xl:text-5xl uppercase font-heading font-bold">
@@ -98,7 +98,7 @@ const Footer = () => {
               viewBox="0 0 18 24"
               fill="none"
             >
-              <g clip-path="url(#clip0_215_739)">
+              <g clipPath="url(#clip0_215_739)">
                 <path
                   d="M10.1109 23.4C12.5156 20.3906 18 13.0969 18 9C18 4.03125 13.9688 0 9 0C4.03125 0 0 4.03125 0 9C0 13.0969 5.48438 20.3906 7.88906 23.4C8.46562 24.1172 9.53438 24.1172 10.1109 23.4ZM9 6C9.79565 6 10.5587 6.31607 11.1213 6.87868C11.6839 7.44129 12 8.20435 12 9C12 9.79565 11.6839 10.5587 11.1213 11.1213C10.5587 11.6839 9.79565 12 9 12C8.20435 12 7.44129 11.6839 6.87868 11.1213C6.31607 10.5587 6 9.79565 6 9C6 8.20435 6.31607 7.44129 6.87868 6.87868C7.44129 6.31607 8.20435 6 9 6Z"
                   fill="#E5B946"
@@ -172,7 +172,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center text-sm py-4 gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-center text-sm py-5 md:py-10 gap-4">
         <div className="flex flex-wrap gap-6 justify-center md:justify-start">
           <a href="/about" className="hover:underline">
             About Us
