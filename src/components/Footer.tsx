@@ -74,7 +74,12 @@ interface FooterImageProps {
 
 const Footer = () => {
   const ImageLink = ({ href, src, alt }: FooterImageProps) => (
-    <a className="h-12 w-12 bg-[#1D1D1F] rounded-full p-3" href={href} target="_blank" rel="noreferrer">
+    <a
+      className="h-12 w-12 bg-[#1D1D1F] rounded-full p-3"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
       <img className="h-full" src={src} alt={alt} />
     </a>
   );
@@ -163,11 +168,13 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Form */}
-        <div className="md:pl-10 md:w-1/2">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase tracking-wide text-center md:text-left mb-4 xl:mb-10">
-            Join our Newsletter
-          </h2>
-          <NewsletterForm />
+        <div className="md:w-1/2 flex flex-col items-center md:items-end">
+          <div>
+            <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase tracking-wide text-center md:text-left mb-4 xl:mb-10">
+              Join our Newsletter
+            </h2>
+            <NewsletterForm />
+          </div>
         </div>
       </div>
 
