@@ -2,7 +2,21 @@
 "use client";
 
 import Link from "next/link";
-import { JSX, useState } from "react";
+import { useState } from "react";
+import {
+  RiMoneyDollarCircleLine,
+  RiGraduationCapFill,
+  RiShirtLine,
+  RiHospitalFill,
+} from "react-icons/ri";
+
+const icons = [
+  RiMoneyDollarCircleLine,
+  RiGraduationCapFill,
+  RiMoneyDollarCircleLine,
+  RiShirtLine,
+  RiHospitalFill,
+];
 
 const WhatWeDoSection = ({
   data,
@@ -47,76 +61,83 @@ const WhatWeDoSection = ({
                     slug: string;
                     title: string;
                     description: string;
-                    icon: JSX.Element;
                   };
                 },
-                index: React.Key | null | undefined
-              ) => (
-                <div key={index} className="py-4 border-b-2 border-[#FFFFFF40]">
-                  <div
-                    className={`transition-all duration-300 ${
-                      activeId === item.fields.slug
-                        ? "border-l-3 border-yellow pl-4"
-                        : "pl-0"
-                    }`}
-                  >
-                    <button
-                      className="flex items-center justify-between w-full cursor-pointer"
-                      onClick={() => handleToggle(item.fields.slug)}
+                index: number
+              ) => {
+                const IconComponent = icons[index];
+                return (
+                  <div key={index} className="py-4 border-b-2 border-[#FFFFFF40]">
+                    <div
+                      className={`transition-all duration-300 ${
+                        activeId === item.fields.slug
+                          ? "border-l-3 border-yellow pl-4"
+                          : "pl-0"
+                      }`}
                     >
-                      <div className="flex items-center gap-3 py-2">
-                        {/* Circle with icon inside */}
-                        <div
-                          className={`p-2 rounded-full border ${
-                            activeId === item.fields.slug
-                              ? "border-yellow"
-                              : "border-white"
-                          }`}
-                          style={{ backgroundColor: "transparent" }}
-                        >
-                          {item.fields.icon}
+                      <button
+                        className="flex items-center justify-between w-full cursor-pointer"
+                        onClick={() => handleToggle(item.fields.slug)}
+                      >
+                        <div className="flex items-center gap-3 py-2">
+                          {/* Circle with icon inside */}
+                          <div
+                            className={`p-2 rounded-full border ${
+                              activeId === item.fields.slug
+                                ? "border-yellow"
+                                : "border-white"
+                            }`}
+                            style={{ backgroundColor: "transparent" }}
+                          >
+                            {IconComponent && (
+                              <IconComponent
+                                className={`text-2xl ${
+                                  activeId === item.fields.slug
+                                    ? "text-yellow"
+                                    : "text-white"
+                                }`}
+                              />
+                            )}
+                          </div>
+
+                          {/* Title */}
+                          <h3
+                            className={`font-button uppercase text-lg xl:text-xl font-medium leading-7 ${
+                              activeId === item.fields.slug
+                                ? "text-yellow"
+                                : "text-white"
+                            }`}
+                          >
+                            {item.fields.title}
+                          </h3>
                         </div>
+                      </button>
 
-                        {/* Title */}
-                        <h3
-                          className={`font-button uppercase text-lg xl:text-xl font-medium leading-7 ${
-                            activeId === item.fields.slug
-                              ? "text-yellow"
-                              : "text-white"
-                          }`}
-                        >
-                          {item.fields.title}
-                        </h3>
-                      </div>
-                    </button>
-
-                    {/* Description */}
-                    {activeId === item.fields.slug &&
-                      item.fields.description && (
-                        <p className="text-white text-lg xl:text-xl font-normal leading-7 pl-0 pr-2 pb-3">
-                          {item.fields.description}
-                        </p>
-                      )}
+                      {/* Description */}
+                      {activeId === item.fields.slug &&
+                        item.fields.description && (
+                          <p className="text-white text-lg xl:text-xl font-normal leading-7 pl-0 pr-2 pb-3">
+                            {item.fields.description}
+                          </p>
+                        )}
+                    </div>
                   </div>
-                </div>
-              )
+                );
+              }
             )}
           </div>
 
-          {/* Image Section with overlay on hover */}
+          {/* Image Section */}
           <div className="flex items-center justify-center">
             <Link
               href={`/solutions/${activeItem.fields.slug}`}
               className="relative group w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden"
             >
-              {/* The image */}
               <img
                 src={`https:${activeItem.fields.heroImageResolved.fields.file.url}`}
                 alt={activeItem.fields.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-
-              {/* Overlay and text */}
               <div className="absolute inset-0 bg-[#000000A8] bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span className="text-white text-2xl lg:text-4xl font-normal font-button uppercase">
                   View Details
