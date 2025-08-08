@@ -30,10 +30,14 @@
   --color-bostonBlue: #3780BF;
   --color-yellow: #E5B946;
   --color-gray-200: #4d4a4a;
+  --color-gray-300: #231F20; 
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.custom-iamgeBackground {
   background-color: #231F20;
   background-image: url(/images/bg.svg);
 }

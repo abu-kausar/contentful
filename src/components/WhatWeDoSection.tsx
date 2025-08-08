@@ -23,11 +23,11 @@ const WhatWeDoSection = ({
   );
 
   return (
-    <section className="relative bg-texture px-5 lg:px-20 xl:px-32 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 overflow-hidden">
+    <section className="relative bg-gray-300 px-5 lg:px-20 xl:px-32 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 overflow-hidden">
       <img
         src="/overlay.png"
         alt="Overlay"
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
       />
       <div className="relative z-10 w-full mx-auto">
         <h2 className="text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase text-white mb-5 lg:mb-8">
@@ -61,7 +61,7 @@ const WhatWeDoSection = ({
                     }`}
                   >
                     <button
-                      className="flex items-center justify-between w-full"
+                      className="flex items-center justify-between w-full cursor-pointer"
                       onClick={() => handleToggle(item.fields.slug)}
                     >
                       <div className="flex items-center gap-3 py-2">
