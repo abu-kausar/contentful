@@ -2,7 +2,7 @@ import React from "react";
 
 const RecentWinsPage = () => {
   return (
-    <>
+    <div className="custom-iamgeBackground">
       <div className="mb-10 py-16 bg-[url('/images/winsbg.png')] bg-cover bg-no-repeat">
         <div className="container mx-auto px-5 relative">
           <p className="text-base text-center md:text-left text-white font-bold uppercase">
@@ -217,7 +217,7 @@ const RecentWinsPage = () => {
             County.
           </p>
         </section>
-        <div className="flex items-center justify-center my-10">
+        <div className="flex items-center justify-center py-10">
           <a
             href=""
             className="bg-yellow text-black px-5 py-2 rounded-full text-base uppercase font-bold hover:bg-green- hover:text-white"
@@ -226,7 +226,7 @@ const RecentWinsPage = () => {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

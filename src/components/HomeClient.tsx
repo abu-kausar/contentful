@@ -2,13 +2,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import CampaignTicker from "@/components/CampaignTicker";
-import ColorSection from "@/components/ColorSection";
-import Hero from "./Hero";
 import DescriptionSection from "./DescriptionSection";
 import PlanSection from "./PlanSection";
 import BuildingPowerSection from "./BuildingPowerSection";
 import WhatWeDoSection from "./WhatWeDoSection";
 import JoinSection from "./JoinSection";
+import Hero from "./Hero";
 // import FeaturedSectionWithVideo from "@/components/FeaturedSectionWithVideo";
 // import ArrowsCarousel from "@/components/ArrowCarousel";
 

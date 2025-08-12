@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
-import { FaPlay } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
 
 interface JoinSectionProps {
   title: string;

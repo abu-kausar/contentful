@@ -20,7 +20,7 @@ const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const heroImage = content.heroImageResolved;
 
   return (
-    <>
+    <div className="custom-iamgeBackground">
       <div className="max-w-screen-lg mx-auto p-8 md:py-16 text-white">
         <img
           src={`https:${heroImage.fields.file.url}`}
@@ -46,7 +46,7 @@ const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <h2 className="p-8 md:p-16 text-white font-heading font-bold text-5xl uppercase tracking-wide py-6">
         Related Links
       </h2>
-    </>
+    </div>
   );
 };
 

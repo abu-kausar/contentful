@@ -1,10 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { LandingHeroFields } from "@/app/utils/types";
 import React, { useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+
+interface HeroProps {
+  title: string;
+}
 
 const MASK_URL = "/videoOverlay.svg";
 
@@ -21,7 +24,7 @@ const maskStyle: React.CSSProperties = {
 
 const LargeVideo = ({ onPlay }: { onPlay: () => void }) => {
   return (
-    <div className="relative w-full video-height1 overflow-hidden">
+    <div className="relative w-full video-height overflow-hidden">
       {/* Video wrapped in a div that applies the CSS mask */}
       <div className="absolute inset-0 z-20" style={maskStyle}>
         <video
@@ -57,7 +60,7 @@ const LargeVideo = ({ onPlay }: { onPlay: () => void }) => {
   );
 };
 
-const LandingHero = ({ title }: LandingHeroFields) => {
+const Hero = ({ title }: HeroProps) => {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
@@ -109,7 +112,7 @@ const LandingHero = ({ title }: LandingHeroFields) => {
 
               {/* Video player */}
               <div
-                className="relative video-height1"
+                className="relative video-height"
                 style={{ paddingBottom: "56.25%", paddingTop: "25px" }}
               >
                 <video
@@ -178,7 +181,7 @@ const LandingHero = ({ title }: LandingHeroFields) => {
 
               {/* Video player */}
               <div
-                className="relative video-height1"
+                className="relative video-height"
                 style={{ paddingBottom: "56.25%", paddingTop: "25px" }}
               >
                 <video
@@ -200,4 +203,4 @@ const LandingHero = ({ title }: LandingHeroFields) => {
   );
 };
 
-export default LandingHero;
+export default Hero;

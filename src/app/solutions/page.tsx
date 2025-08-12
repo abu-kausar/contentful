@@ -13,7 +13,7 @@ const EquitySolutionsPage = async () => {
   const solutions = entries;
 
   return (
-    <div>
+    <div className="custom-iamgeBackground">
       <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white p-8 md:p-16 text-white">
         Equity Solutions
       </h2>

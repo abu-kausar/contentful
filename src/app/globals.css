@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 
 @import "tailwindcss";
 
@@ -25,12 +25,12 @@
   --font-markdown-body: "Source Sans Pro", "Arial", "sans-serif";
   --font-heading: "Devant Pro", "Arial", "sans-serif";
   --font-body: "Core Sans D 35 Regular", "Arial", "sans-serif";
-  --color-green: #12814B;
-  --color-red: #DB3832;
-  --color-bostonBlue: #3780BF;
-  --color-yellow: #E5B946;
+  --color-green: #12814b;
+  --color-red: #db3832;
+  --color-bostonBlue: #3780bf;
+  --color-yellow: #e5b946;
   --color-gray-200: #4d4a4a;
-  --color-gray-300: #231F20; 
+  --color-gray-300: #231f20;
 }
 
 html {
@@ -38,7 +38,6 @@ html {
 }
 
 .custom-iamgeBackground {
-  background-color: #231F20;
   background-image: url(/images/bg.svg);
 }
 
@@ -60,7 +59,8 @@ html {
 @font-face {
   font-family: "Devant Pro";
   font-weight: 700;
-  src: url("/fonts/devant/DevantPro-Bold.woff") format("woff"), url("/fonts/devant/DevantPro-Bold.woff2") format("woff2");
+  src: url("/fonts/devant/DevantPro-Bold.woff") format("woff"),
+    url("/fonts/devant/DevantPro-Bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -93,40 +93,44 @@ html {
 
 body {
   font-size: 16px;
-  font-family:  "Core Sans D 35 Regular", "Arial", sans-serif;
+  font-family: "Core Sans D 35 Regular", "Arial", sans-serif;
 }
 
 /* campaign ticker */
 .marquee {
-    width: 100%;
-    @apply bg-yellow;
-    @apply h-16;
-    overflow: hidden;
+  width: 100%;
+  @apply bg-yellow;
+  @apply h-16;
+  overflow: hidden;
 }
 
 .marquee-content {
-    display: flex;
-    list-style: none;
-    animation: scrolling 10s linear infinite;
+  display: flex;
+  list-style: none;
+  animation: scrolling 10s linear infinite;
 }
 
 .marquee-item {
-    width: 300px;
-    @apply uppercase;
-    @apply font-button;
-    @apply text-red;
-    @apply text-xl;
-    flex-shrink: 0;
+  width: 300px;
+  @apply uppercase;
+  @apply font-button;
+  @apply text-red;
+  @apply text-xl;
+  flex-shrink: 0;
 }
 
 .marquee-image {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 @keyframes scrolling {
-    0% { transform: translateX(0); }
-    100% { transform: translatex(-1000px); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translatex(-1000px);
+  }
 }
 
 .arrows-carousel .swiper-button-next,
@@ -134,7 +138,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 3rem; 
+  width: 3rem;
   height: 3rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -151,7 +155,7 @@ body {
 }
 
 .arrows-carousel .swiper-button-next {
-  right: 0.5rem; 
+  right: 0.5rem;
   background-image: url(/Right_Arrow.png);
 }
 
@@ -179,7 +183,7 @@ body {
   @apply right-0;
   background-image: url(/Right_Arrow.png);
   top: unset;
-  bottom: 0; 
+  bottom: 0;
   margin-top: 0;
 }
 
@@ -218,68 +222,23 @@ body {
 .container {
   width: 100%;
   @media (width >= 40rem /* 640px */) {
-      max-width: 40rem /* 640px */;
+    max-width: 40rem /* 640px */;
   }
   @media (width >= 48rem /* 768px */) {
-      max-width: 48rem /* 768px */;
+    max-width: 48rem /* 768px */;
   }
   @media (width >= 64rem /* 1024px */) {
-      max-width: 64rem /* 1024px */;
+    max-width: 64rem /* 1024px */;
   }
   @media (width >= 80rem /* 1280px */) {
-      max-width: 80rem /* 1280px */;
+    max-width: 80rem /* 1280px */;
   }
   @media (width >= 96rem /* 1536px */) {
-      max-width: 96rem /* 1536px */;
+    max-width: 96rem /* 1536px */;
   }
 }
 
-.video-height {
-  @media (width >= 600px) {
-    height: 428px;
-  }
-  @media (width >= 768px) {
-    height: 262px;
-  }
-  @media (width >= 820px) {
-    height: 282px;
-  }
-  @media (width >= 896px) {
-    height: 311px;
-  }
-  @media (width >= 992px) {
-    height: 348px;
-  }
-  @media (width >= 1024px) {
-    height: 360px;
-  }
-  @media (width >= 1280px) {
-    height: 458px;
-  }
-  @media (width >= 1366px) {
-    height: 491px;
-  }
-  @media (width >= 1440px) {
-    height: 519px;
-  }
-  @media (width >= 1536px) {
-    height: 556px;
-  }
-  @media (width >= 1700px) {
-    height: 618px;
-  }
-  @media (width >= 1920px) {
-    height: 700px;
-  }
-  @media (width >= 2000px) {
-    height: 733px;
-  }
-  @media (width >= 2100px) {
-    height: 771px;
-  }
-}
-
-.overlay-height{
+.overlay-height {
   height: 140px;
   @media (width >= 375px) {
     height: 150px;
@@ -295,7 +254,7 @@ body {
   }
 }
 
-.video-height1 {
+.video-height {
   height: 230px;
   @media (width >= 375px) {
     height: 250px;
@@ -351,15 +310,15 @@ body {
 }
 
 .markdown.use-source-sans-pro {
-    @apply font-markdown-body;
+  @apply font-markdown-body;
 }
 
 .markdown h1 {
-    @apply font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white text-center py-4;
+  @apply font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white text-center py-4;
 }
 
 .markdown h2 {
-    @apply font-heading font-bold text-3xl md:text-5xl uppercase tracking-wide text-white py-4;
+  @apply font-heading font-bold text-3xl md:text-5xl uppercase tracking-wide text-white py-4;
 }
 
 .markdown h3 {
@@ -367,62 +326,63 @@ body {
 }
 
 .markdown blockquote {
-    @apply p-4 my-4 italic border-l-4 border-gray-200 text-xl;
+  @apply p-4 my-4 italic border-l-4 border-gray-200 text-xl;
 }
 
 .markdown ul {
-    @apply list-disc list-inside pl-4 md:pl-8;
+  @apply list-disc list-inside pl-4 md:pl-8;
 }
 
 .markdown ol {
-    @apply list-decimal list-inside pl-8;
+  @apply list-decimal list-inside pl-8;
 }
 
 .markdown li {
-    @apply mb-3;
-    padding-left: 25px;
-    text-indent: -22px;
+  @apply mb-3;
+  padding-left: 25px;
+  text-indent: -22px;
 }
 
 .markdown li p {
-    display: inline;
+  display: inline;
 }
 
 .markdown strong {
-    @apply font-bold;
+  @apply font-bold;
 }
 
 .markdown p {
-    @apply pb-4;
+  @apply pb-4;
 }
 
 .markdown small {
-    @apply text-xs;
+  @apply text-xs;
 }
 
 .markdown p.small {
-    @apply text-xs;
-    @apply pt-4;
+  @apply text-xs;
+  @apply pt-4;
 }
 
 .markdown p.small.caption {
-    @apply text-xs;
-    @apply pt-2;
-    @apply italic;
+  @apply text-xs;
+  @apply pt-2;
+  @apply italic;
 }
 
 .markdown hr {
-    @apply pb-2;
-    border-top-width: 2px;
-    border-color: white;
+  @apply pb-2;
+  border-top-width: 2px;
+  border-color: white;
 }
 
 .markdown a:not(.article-preview-horizontal):not(.article-preview) {
-    text-decoration: underline;
-    @apply text-yellow;
-    @apply hover:text-yellow-500;
+  text-decoration: underline;
+  @apply text-yellow;
+  @apply hover:text-yellow-500;
 }
 
-.markdown a.article-preview p, .markdown a.article-preview-horizontal p {
-    @apply text-base
+.markdown a.article-preview p,
+.markdown a.article-preview-horizontal p {
+  @apply text-base;
 }
