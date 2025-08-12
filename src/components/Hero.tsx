@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
@@ -62,6 +62,18 @@ const LargeVideo = ({ onPlay }: { onPlay: () => void }) => {
 
 const Hero = ({ title }: HeroProps) => {
   const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    if (showVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showVideo]);
 
   return (
     <>
