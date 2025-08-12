@@ -6,7 +6,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="min-h-20 custom-iamgeBackground border-b-2 border-gray-200 top-0 z-50 w-full">
+    <header className="min-h-20 custom-iamgeBackground top-0 z-50 w-full">
       <nav
         role="navigation"
         className="w-full flex justify-between items-center h-full flex-wrap px-8 md:px-16"
