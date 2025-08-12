@@ -2,7 +2,7 @@ import React from "react";
 
 const BuildingPowerSection = () => {
   return (
-    <section className="bg-red text-white text-center py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 px-5 ">
+    <section className="custom-overlay bg-red text-white text-center py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 px-5 ">
       <h2 className="text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase mb-4">
         Building Power Through Equity
       </h2>

@@ -25,8 +25,11 @@ const maskStyle: React.CSSProperties = {
 const LargeVideo = ({ onPlay }: { onPlay: () => void }) => {
   return (
     <div className="relative w-full video-height overflow-hidden">
-      {/* Video wrapped in a div that applies the CSS mask */}
-      <div className="absolute inset-0 z-20" style={maskStyle}>
+      {/* Masked video - visible only on md and above */}
+      <div
+        className="absolute inset-0 z-20 hidden md:block"
+        style={maskStyle}
+      >
         <video
           autoPlay
           muted
@@ -41,14 +44,30 @@ const LargeVideo = ({ onPlay }: { onPlay: () => void }) => {
         </video>
       </div>
 
-      {/* Visible overlay artwork as a fallback/visual layer. pointer-events-none allows clicks through. */}
+      {/* Unmasked video - visible only on mobile */}
+      <div className="absolute inset-0 z-20 md:hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source
+            src="https://d2j8oo2nydfmnp.cloudfront.net/sizzle-less-cropped.m4v"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      {/* Overlay artwork visible only from md and above */}
       <img
         src={MASK_URL}
         alt="Video overlay"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10 hidden md:block"
       />
 
-      {/* Play button sits above the overlay */}
+      {/* Play button */}
       <button
         onClick={onPlay}
         aria-label="Play video"
@@ -86,16 +105,20 @@ const Hero = ({ title }: HeroProps) => {
         />
 
         {/* Content layer */}
-        <div className="relative z-10 w-full md:w-1/2 flex justify-center items-center py-10 md:py-3 lg:py-5 md:pb-10">
-          <div className="pl-[40%] lg:pl-[45%] text-white">
+        <div className="relative z-10 w-full md:w-1/2 flex justify-center items-center py-10 md:py-3 lg:py-5">
+          <div className="pl-[30%] lg:pl-[40%] xl:pl-[35%] lg:pr-[5%] xl:pr-[5%] text-white">
             <h1
-              className="font-heading font-medium text-6xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl xl:text-[140px] leading-[80%] uppercase tracking-wide"
+              className="font-heading font-medium md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-[140px] leading-[80%] uppercase tracking-wide"
               style={{ textShadow: "0 4px 12px rgba(0, 0, 0, 0.50)" }}
             >
               {title}
             </h1>
+            <p className="font-body md:text-xs lg:text-sm xl:text-xl pt-5 lg:pt-10">
+              A Black led nonprofit working to build strong communities in King
+              County through advocacy, policy and resource ownership.
+            </p>
             <a href="/recentwins" rel="noreferrer">
-              <button className="text-sm lg:text-base mt-7 px-8 lg:px-10 py-2 cursor-pointer bg-red hover:bg-white text-white hover:text-green focus:outline-none rounded-full font-button uppercase tracking-wider">
+              <button className="text-xs lg:text-base mt-5 lg:mt-7 px-5 lg:px-10 py-1 lg:py-2 cursor-pointer bg-red hover:bg-white text-white hover:text-green focus:outline-none rounded-full font-button uppercase tracking-wider">
                 Recent wins
               </button>
             </a>
@@ -144,20 +167,20 @@ const Hero = ({ title }: HeroProps) => {
       </div>
 
       {/* mobile screen */}
-      <div className="md:hidden flex flex-col">
-        <div className="relative flex overlay-height items-center">
+      <div className="custom-iamgeBackground md:hidden flex flex-col">
+        <div className="relative overlay-height flex items-center">
           {/* Background image for entire component */}
           <img
-            src="/heroOverlay.png"
+            src="/mobileOverlay.png"
             alt="Background"
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
 
           {/* Content layer */}
           <div className="relative z-10 w-full md:w-1/2 flex justify-center items-center py-10 md:py-3 lg:py-5 md:pb-10">
-            <div className="text-white">
+            <div className="text-white text-center">
               <h1
-                className="font-heading font-medium text-[50px] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl xl:text-[140px] leading-[80%] uppercase tracking-wide"
+                className="font-heading font-medium text-[50px] sm:text-8xl leading-[80%] uppercase tracking-wide"
                 style={{ textShadow: "0 4px 12px rgba(0, 0, 0, 0.50)" }}
               >
                 {title}
@@ -172,7 +195,7 @@ const Hero = ({ title }: HeroProps) => {
         </div>
 
         {/* Video section */}
-        <div className="relative z-10 w-full h-full bg-yellow">
+        <div className="relative z-10 w-full h-full">
           <LargeVideo onPlay={() => setShowVideo(true)} />
         </div>
 

@@ -73,7 +73,7 @@ interface PlanProps {
 
 const PlanSection = ({ title, subtitle }: PlanProps) => {
   return (
-    <section className="flex flex-col md:flex-row justify-between py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 px-5 lg:px-20 xl:px-32 bg-green text-white">
+    <section className="custom-overlay flex flex-col md:flex-row justify-between py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 px-5 lg:px-20 xl:px-32 bg-green text-white">
       <div className="flex flex-col md:flex-row w-full md:h-[600px] gap-5 xl:gap-10">
         {" "}
         {/* ✅ Equal height container at md+ */}

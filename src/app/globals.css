@@ -41,6 +41,10 @@ html {
   background-image: url(/images/bg.svg);
 }
 
+.custom-overlay {
+  background-image: url(/dotOverlay.png);
+}
+
 @font-face {
   font-family: "Avenir";
   font-weight: 400;
@@ -239,18 +243,18 @@ body {
 }
 
 .overlay-height {
-  height: 140px;
+  height: 210px;
   @media (width >= 375px) {
-    height: 150px;
-  }
-  @media (width >= 400px) {
-    height: 170px;
-  }
-  @media (width >= 500px) {
     height: 220px;
   }
+  @media (width >= 400px) {
+    height: 240px;
+  }
+  @media (width >= 500px) {
+    height: 300px;
+  }
   @media (width >= 640px) {
-    height: 270px;
+    height: 390px;
   }
 }
 
@@ -281,7 +285,7 @@ body {
     height: 382px;
   }
   @media (width >= 1024px) {
-    height: 398px;
+    height: 390px;
   }
   @media (width >= 1280px) {
     height: 466px;
