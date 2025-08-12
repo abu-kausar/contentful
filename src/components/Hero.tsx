@@ -26,10 +26,7 @@ const LargeVideo = ({ onPlay }: { onPlay: () => void }) => {
   return (
     <div className="relative w-full video-height overflow-hidden">
       {/* Masked video - visible only on md and above */}
-      <div
-        className="absolute inset-0 z-20 hidden md:block"
-        style={maskStyle}
-      >
+      <div className="absolute inset-0 z-20 hidden md:block" style={maskStyle}>
         <video
           autoPlay
           muted
@@ -114,8 +111,8 @@ const Hero = ({ title }: HeroProps) => {
               {title}
             </h1>
             <p className="font-body md:text-xs lg:text-sm xl:text-xl pt-5 lg:pt-10">
-              A Black led nonprofit working to build strong communities in King
-              County through advocacy, policy and resource ownership.
+              King County Equity Now is a Black led nonprofit building liberated
+              communities through advocacy, policy, and resource ownership.
             </p>
             <a href="/recentwins" rel="noreferrer">
               <button className="text-xs lg:text-base mt-5 lg:mt-7 px-5 lg:px-10 py-1 lg:py-2 cursor-pointer bg-red hover:bg-white text-white hover:text-green focus:outline-none rounded-full font-button uppercase tracking-wider">
@@ -185,6 +182,11 @@ const Hero = ({ title }: HeroProps) => {
               >
                 {title}
               </h1>
+              <p className="font-body text-xs sm:text-base pt-5 lg:pt-10 mx-[20%]">
+                King County Equity Now is a Black led nonprofit building
+                liberated communities through advocacy, policy, and resource
+                ownership.
+              </p>
               <a href="/recentwins" rel="noreferrer">
                 <button className="text-xs sm:text-sm lg:text-base mt-7 px-8 lg:px-10 py-2 cursor-pointer bg-red hover:bg-white text-white hover:text-green focus:outline-none rounded-full font-button uppercase tracking-wider">
                   Recent wins
