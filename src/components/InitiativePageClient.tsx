@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Link from "next/link";
@@ -42,8 +43,8 @@ const recentWinItems = [
 
 const InitiativePageClient = ({ entries }: { entries: any[] }) => {
   const [filter, setFilter] = useState("All");
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
   if (entries.length === 0) {
     return <div>No content found.</div>;
@@ -73,7 +74,7 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
           </div>
 
           <div className="w-full h-full md:w-1/2">
-            <img src="/initiative.png" className="w-full h-full" />
+            <img src="/initiative.png" className="w-full h-full" alt="Hero" />
           </div>
         </div>
 
@@ -84,23 +85,21 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
           </h1>
 
           <div className="relative mt-5">
-            {/* Custom Navigation Buttons (top-right like your screenshot) */}
+            {/* Custom Navigation Buttons */}
             <div className="absolute -top-16 right-0 flex gap-4 z-10">
               <button
                 ref={prevRef}
                 className="bg-red hover:bg-red-700 text-white px-6 py-3 flex items-center justify-center cursor-pointer"
                 aria-label="Previous"
               >
-                {/* left arrow */}
-                <img src="/Left_Arrow.png" alt="" />
+                <img src="/Left_Arrow.png" alt="Prev" />
               </button>
               <button
                 ref={nextRef}
                 className="bg-green hover:bg-green-700 text-white px-6 py-3 flex items-center justify-center cursor-pointer"
                 aria-label="Next"
               >
-                {/* right arrow */}
-                <img src="/Right_Arrow.png" alt="" />
+                <img src="/Right_Arrow.png" alt="Next" />
               </button>
             </div>
 
@@ -110,32 +109,29 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
               slidesPerView={3}
               centeredSlides
               loop
-              initialSlide={1} // start with 2,3,4 visible
+              initialSlide={1}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
-              // attach custom buttons via refs
               onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-              }}
-              navigation={{
-                prevEl: prevRef.current,
-                nextEl: nextRef.current,
-              }}
-              onSwiper={(swiper) => {
-                // ensure nav is re-initialized after refs are set
-                setTimeout(() => {
+                if (
+                  swiper.params.navigation &&
+                  typeof swiper.params.navigation !== "boolean"
+                ) {
                   swiper.params.navigation.prevEl = prevRef.current;
                   swiper.params.navigation.nextEl = nextRef.current;
-                  swiper.navigation.destroy();
-                  swiper.navigation.init();
-                  swiper.navigation.update();
-                });
+                }
               }}
+              navigation={
+                prevRef.current && nextRef.current
+                  ? {
+                      prevEl: prevRef.current,
+                      nextEl: nextRef.current,
+                    }
+                  : false
+              }
             >
-              {entries.map((item, index) => (
+              {entries.map((item) => (
                 <SwiperSlide key={item.id}>
                   <Link
-                    key={index}
                     href={`/all-blog/${item.fields.slug}`}
                     className="flex flex-col items-center"
                   >
@@ -179,10 +175,10 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                   key={btn}
                   onClick={() => setFilter(btn)}
                   className={`w-full px-2 py-3 md:py-5 text-white outline-none border-none shadow-none 
-                      text-base font-button font-bold uppercase cursor-pointer 
-                      ${
-                        filter === btn ? "bg-red" : "bg-blue-500 hover:bg-red"
-                      }`}
+                        text-base font-button font-bold uppercase cursor-pointer 
+                        ${
+                          filter === btn ? "bg-red" : "bg-blue-500 hover:bg-red"
+                        }`}
                 >
                   {btn}
                 </button>
@@ -201,9 +197,9 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
-                  {entries.slice(3, 6).map((item, index) => (
+                  {entries.slice(3, 6).map((item) => (
                     <Link
-                      key={index}
+                      key={item.fields.slug}
                       href={`/all-blog/${item.fields.slug}`}
                       className="flex flex-col items-center"
                     >
