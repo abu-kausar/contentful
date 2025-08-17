@@ -1,6 +1,6 @@
 export default function NotFound() {
   return (
-    <div>
+    <div className="custom-iamgeBackground">
       <h1 className="font-heading font-bold text-8xl md:text-9xl uppercase tracking-wide p-8 md:p-16 text-white">
         Page Not Found
       </h1>

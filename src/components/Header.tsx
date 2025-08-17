@@ -67,13 +67,8 @@ export default function Header() {
               </a>
             </li>
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <a href="https://www.kingcountyequitynow.com/inittives/">
+              <Link href="/initiatives">
                 Initiatives
-              </a>
-            </li>
-            <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <Link href="/solutions">
-                Freedom Actions
               </Link>
             </li>
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">

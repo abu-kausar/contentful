@@ -32,6 +32,36 @@ export interface SolutionsPageFields {
   description: string;
 }
 
+export interface BlogPostProps {
+  title: string;
+  body: string;
+  heroImage: {
+    fields: {
+      file: {
+        url: string;
+      };
+      title: string;
+    };
+  };
+  slug: string;
+  description: string;
+  articles: {
+    fields: {
+      title: string;
+      slug: string;
+      description: string;
+      heroImage: {
+        fields: {
+          file: {
+            url: string;
+          };
+          title: string;
+        };
+      };
+    };
+  }
+}
+
 export interface AboutPageFields {
   title: string;
   body: string;

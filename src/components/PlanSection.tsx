@@ -22,9 +22,9 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
         {/* Right Side */}
         <div className="w-full md:w-1/2 h-full flex flex-col justify-center gap-10">
           <div>
-            <p className="text-center md:text-left text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase mb-5">
+            <h1 className="text-center md:text-left text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase mb-5">
               {title}
-            </p>
+            </h1>
             <p className="font-body text-lg xl:text-xl font-semibold mb-4 md:mb-8 leading-relaxed">
               {subtitle}
             </p>

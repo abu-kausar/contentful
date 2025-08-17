@@ -22,17 +22,7 @@ const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <div className="custom-iamgeBackground">
       <div className="max-w-screen-lg mx-auto p-8 md:py-16 text-white">
-        <img
-          src={`https:${heroImage.fields.file.url}`}
-          alt="land owners image"
-          className="top-0 left-0 w-full h-[245px] sm:h-[324px] md:h-[360px] lg:h-[503px] object-cover object-center"
-        />
-        <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white text-center py-6">
-          {content.title}
-        </h2>
-        <article className="markdown text-xl py-8 text-justify">
-          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content.body}</ReactMarkdown>
-        </article>
+        c
         {/* TODO: add call to action
          <div className="flex items-center justify-center">
           <a
