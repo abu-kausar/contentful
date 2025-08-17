@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -194,9 +195,9 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                   <h1 className="text-white text-5xl font-heading font-bold uppercase">
                     Recent Wins
                   </h1>
-                  <a href="/all-blog">
+                  <Link href="/all-blog">
                     <p className="uppercase text-white text-base">View all</p>
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
@@ -233,9 +234,9 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                   <h1 className="text-white text-5xl font-heading font-bold uppercase">
                     News & Publications
                   </h1>
-                  <a href="/all-blog">
+                  <Link href="/all-blog">
                     <p className="uppercase text-white text-base">View all</p>
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
@@ -263,9 +264,9 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                   <h1 className="text-white text-5xl font-heading font-bold uppercase">
                     Current Initiatives
                   </h1>
-                  <a href="/all-blog">
+                  <Link href="/all-blog">
                     <p className="uppercase text-white text-base">View all</p>
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
@@ -293,9 +294,9 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                   <h1 className="text-white text-5xl font-heading font-bold uppercase">
                     Blogs
                   </h1>
-                  <a href="/all-blog">
+                  <Link href="/all-blog">
                     <p className="uppercase text-white text-base">View all</p>
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
