@@ -8,39 +8,6 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const recentWinItems = [
-  {
-    id: 1,
-    title: "MIGRANT TO AFRICATOWN",
-    img: "/plan.png",
-    link: "to-africatown-community",
-  },
-  {
-    id: 2,
-    title: "WILLIAM GROSE CENTER",
-    img: "/initiative.png",
-    link: "william-grose-center",
-  },
-  {
-    id: 3,
-    title: "2021 ELECTIONS CANDIDATE GRADE REPORT",
-    img: "/plan.png",
-    link: "elections-update",
-  },
-  {
-    id: 4,
-    title: "JOURNEY TO BLACK SAFETY SURVEY",
-    img: "/initiative.png",
-    link: "journey-to-black-safety-survey",
-  },
-  {
-    id: 5,
-    title: "BLACK COMMUNITY INVESTMENT",
-    img: "/images/winsbg.png",
-    link: "invest-in-black",
-  },
-];
-
 const InitiativePageClient = ({ entries }: { entries: any[] }) => {
   const [filter, setFilter] = useState("All");
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -106,8 +73,6 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
             <Swiper
               modules={[Autoplay, Navigation]}
               spaceBetween={20}
-              slidesPerView={3}
-              centeredSlides
               loop
               initialSlide={1}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -128,34 +93,46 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                     }
                   : false
               }
+              breakpoints={{
+                320: { slidesPerView: 1, centeredSlides: false }, // mobile small
+                640: { slidesPerView: 3, centeredSlides: true }, // sm
+                768: { slidesPerView: 2, centeredSlides: false }, // md → exactly 2
+                1024: { slidesPerView: 3, centeredSlides: true }, // lg+
+              }}
             >
-              {entries.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <Link
-                    href={`/all-blog/${item.fields.slug}`}
-                    className="flex flex-col items-center"
-                  >
-                    {item.fields.heroImageResolved?.fields?.file?.url && (
+              {entries.map((item) => {
+                const imageUrl = item.fields.heroImageResolved?.fields?.file
+                  ?.url
+                  ? `https:${item.fields.heroImageResolved.fields.file.url}`
+                  : "/defaultImage.png";
+
+                return (
+                  <SwiperSlide key={item.id}>
+                    <Link
+                      href={`/all-blog/${item.fields.slug}`}
+                      className="flex flex-col items-center"
+                    >
                       <img
-                        src={`https:${item.fields.heroImageResolved.fields.file.url}`}
+                        src={imageUrl}
                         alt={
-                          item.fields.heroImageResolved.fields.description ||
-                          "Blog Image"
+                          item.fields.heroImageResolved?.fields?.description ||
+                          "Default Blog Image"
                         }
                         className="w-full h-[432px] object-cover"
                       />
-                    )}
-                    <div className="text-center p-2 mt-4 w-full">
-                      <p className="text-white text-lg uppercase truncate">
-                        {item.fields.title}
-                      </p>
-                      <p className="text-white text-base font-light mt-2 truncate">
-                        {item.fields.slug}
-                      </p>
-                    </div>
-                  </Link>
-                </SwiperSlide>
-              ))}
+
+                      <div className="text-center p-2 mt-4 w-full">
+                        <p className="text-white text-lg uppercase truncate">
+                          {item.fields.title}
+                        </p>
+                        <p className="text-white text-base font-light mt-2 truncate">
+                          {item.fields.slug}
+                        </p>
+                      </div>
+                    </Link>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
         </div>
@@ -185,6 +162,7 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
               ))}
             </div>
 
+            {/* recent wins section */}
             {(filter === "All" || filter === "Recent Wins") && (
               <div>
                 <div className="flex items-center justify-between mt-10">
@@ -197,33 +175,42 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
-                  {entries.slice(3, 6).map((item) => (
-                    <Link
-                      key={item.fields.slug}
-                      href={`/all-blog/${item.fields.slug}`}
-                      className="flex flex-col items-center"
-                    >
-                      {item.fields.heroImageResolved?.fields?.file?.url && (
-                        <img
-                          src={`https:${item.fields.heroImageResolved.fields.file.url}`}
-                          alt={
-                            item.fields.heroImageResolved.fields.description ||
-                            "Blog Image"
-                          }
-                          className="w-full h-[432px] object-cover"
-                        />
-                      )}
-                      <div className="text-center p-2 mt-4 w-full">
-                        <p className="text-white text-lg uppercase truncate">
-                          {item.fields.title}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
+                  {entries
+                    .slice(filter === "All" ? 0 : 0, filter === "All" ? 3 : 6)
+                    .map((item) => {
+                      const imageUrl = item.fields.heroImageResolved?.fields
+                        ?.file?.url
+                        ? `https:${item.fields.heroImageResolved.fields.file.url}`
+                        : "/defaultImage.png";
+
+                      return (
+                        <Link
+                          key={item.fields.slug}
+                          href={`/all-blog/${item.fields.slug}`}
+                          className="flex flex-col items-center"
+                        >
+                          <img
+                            src={imageUrl}
+                            alt={
+                              item.fields.heroImageResolved?.fields
+                                ?.description || "Default Blog Image"
+                            }
+                            className="w-full h-[432px] object-cover"
+                          />
+
+                          <div className="text-center p-2 mt-4 w-full">
+                            <p className="text-white text-lg uppercase truncate">
+                              {item.fields.title}
+                            </p>
+                          </div>
+                        </Link>
+                      );
+                    })}
                 </div>
               </div>
             )}
 
+            {/* news and publication section */}
             {(filter === "All" || filter === "News & Publications") && (
               <div>
                 <div className="flex items-center justify-between mt-10">
@@ -235,25 +222,78 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
-                  {recentWinItems.slice(0, 3).map((item) => (
-                    <div key={item.id} className="flex flex-col items-center">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-68 object-cover"
-                      />
-                      <div className="text-center p-2 mt-4">
-                        <p className="text-white text-lg uppercase truncate">
-                          {item.title}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5 mt-5 w-[100%]">
+                  {entries.slice(0, 5).map((item, index) => {
+                    const imageUrl = item.fields.heroImageResolved?.fields?.file
+                      ?.url
+                      ? `https:${item.fields.heroImageResolved.fields.file.url}`
+                      : "/defaultImage.png";
+
+                    return (
+                      <Link
+                        key={item.fields.slug}
+                        href={`/all-blog/${item.fields.slug}`}
+                        className={`${
+                          index === 0
+                            ? "md:col-span-2 flex flex-col md:flex-row text-white border border-[#a09999]"
+                            : "flex flex-col items-center"
+                        }`}
+                      >
+                        {/* First card (special layout) */}
+                        {index === 0 ? (
+                          <>
+                            {/* Text side */}
+                            <div className="flex flex-col justify-center p-6 w-full md:w-1/2 text-left">
+                              <h2 className="text-white text-xl md:text-2xl font-bold uppercase mb-3">
+                                {item.fields.title}
+                              </h2>
+                              <p className="text-white text-base mb-3 line-clamp-4 border-t border-[#a09999] pt-3">
+                                {item.fields.description ||
+                                  "Click to read more about this publication."}
+                              </p>
+                              <span className="text-yellow-400 font-semibold cursor-pointer">
+                                Read more
+                              </span>
+                            </div>
+
+                            {/* Image side */}
+                            <div className="w-full md:w-1/2">
+                              <img
+                                src={imageUrl}
+                                alt={
+                                  item.fields.heroImageResolved?.fields
+                                    ?.description || "Default Blog Image"
+                                }
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            {/* Normal cards */}
+                            <img
+                              src={imageUrl}
+                              alt={
+                                item.fields.heroImageResolved?.fields
+                                  ?.description || "Default Blog Image"
+                              }
+                              className="w-full object-cover h-68"
+                            />
+                            <div className="text-center p-2 mt-4 w-full">
+                              <p className="text-white text-lg uppercase truncate">
+                                {item.fields.title}
+                              </p>
+                            </div>
+                          </>
+                        )}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}
 
+            {/* current initiatives section */}
             {(filter === "All" || filter === "Current Initiatives") && (
               <div>
                 <div className="flex items-center justify-between mt-10">
@@ -266,26 +306,45 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
-                  {recentWinItems.slice(0, 3).map((item) => (
-                    <div key={item.id} className="flex flex-col items-center">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-64 2xl:h-[432px] object-cover"
-                      />
-                      <div className="text-center p-2 mt-4">
-                        <p className="text-white text-lg uppercase truncate">
-                          {item.title}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                  {entries
+                    .slice(filter === "All" ? 0 : 0, filter === "All" ? 3 : 6)
+                    .map((item) => {
+                      const imageUrl = item.fields.heroImageResolved?.fields
+                        ?.file?.url
+                        ? `https:${item.fields.heroImageResolved.fields.file.url}`
+                        : "/defaultImage.png"; // <-- fallback
+
+                      return (
+                        <Link
+                          key={item.fields.slug}
+                          href={`/all-blog/${item.fields.slug}`}
+                          className="flex flex-col items-center"
+                        >
+                          <img
+                            src={imageUrl}
+                            alt={
+                              item.fields.heroImageResolved?.fields
+                                ?.description || "Default Blog Image"
+                            }
+                            className="w-full h-[432px] object-cover"
+                          />
+
+                          <div className="text-center p-2 mt-4 w-full">
+                            <p className="text-white text-lg uppercase truncate">
+                              {item.fields.title}
+                            </p>
+                          </div>
+                        </Link>
+                      );
+                    })}
                 </div>
               </div>
             )}
 
+            {/* blogs section */}
             {(filter === "All" || filter === "Blogs") && (
               <div>
+                {/* Header Section */}
                 <div className="flex items-center justify-between mt-10">
                   <h1 className="text-white text-5xl font-heading font-bold uppercase">
                     Blogs
@@ -295,21 +354,72 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 w-[100%]">
-                  {recentWinItems.slice(0, 3).map((item) => (
-                    <div key={item.id} className="flex flex-col items-center">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-64 2xl:h-[432px] object-cover"
-                      />
-                      <div className="text-center p-2 mt-4">
-                        <p className="text-white text-lg uppercase truncate">
-                          {item.title}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                {/* Blog Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5 w-full">
+                  {/* Left Column (2 stacked small cards) */}
+                  <div className="flex flex-col gap-5">
+                    {entries.slice(0, 2).map((item) => {
+                      const imageUrl = item.fields.heroImageResolved?.fields
+                        ?.file?.url
+                        ? `https:${item.fields.heroImageResolved.fields.file.url}`
+                        : "/defaultImage.png";
+
+                      return (
+                        <Link
+                          key={item.fields.slug}
+                          href={`/all-blog/${item.fields.slug}`}
+                          className="flex flex-col"
+                        >
+                          <img
+                            src={imageUrl}
+                            alt={
+                              item.fields.heroImageResolved?.fields
+                                ?.description || "Default Blog Image"
+                            }
+                            className="w-full h-[250px] object-cover"
+                          />
+                          <div className="text-center p-2 mt-4 w-full">
+                            <p className="text-white text-lg uppercase truncate">
+                              {item.fields.title}
+                            </p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+
+                  {/* Right Column (Big Featured Card) */}
+                  <div>
+                    {entries[2] && (
+                      <Link
+                        href={`/all-blog/${entries[2].fields.slug}`}
+                        className="relative block w-full h-full"
+                      >
+                        <img
+                          src={
+                            entries[2].fields.heroImageResolved?.fields?.file
+                              ?.url
+                              ? `https:${entries[2].fields.heroImageResolved.fields.file.url}`
+                              : "/defaultImage.png"
+                          }
+                          alt={
+                            entries[2].fields.heroImageResolved?.fields
+                              ?.description || "Default Blog Image"
+                          }
+                          className="w-full h-full object-cover rounded"
+                        />
+                        {/* Overlay Content */}
+                        <div className="absolute bottom-8 left-8">
+                          <p className="text-white text-lg uppercase font-bold max-w-[100%]">
+                            {entries[2].fields.title}
+                          </p>
+                          <button className="mt-2 px-4 py-2 bg-[#b7953b] rounded text-black text-sm uppercase font-semibold opacity-100 cursor-pointer">
+                            Read More
+                          </button>
+                        </div>
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
