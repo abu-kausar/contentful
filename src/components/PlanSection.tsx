@@ -20,9 +20,9 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
         </div>
 
         {/* Right Side */}
-        <div className="w-full md:w-1/2 h-full flex flex-col justify-center gap-10">
+        <div className="w-full md:w-1/2 h-full flex flex-col justify-center gap-5 2xl:gap-10">
           <div>
-            <h1 className="text-center md:text-left text-7xl lg:text-8xl xl:text-9xl font-medium font-heading uppercase mb-5">
+            <h1 className="text-center md:text-left text-7xl md:text-8xl 2xl:text-9xl font-medium font-heading uppercase mb-5">
               {title}
             </h1>
             <p className="font-body text-lg xl:text-xl font-semibold mb-4 md:mb-8 leading-relaxed">
@@ -32,7 +32,7 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
             {/* Box Section */}
             <div className="border-4 border-yellow divide-y-4 divide-yellow">
               <div className="grid grid-cols-2 font-button uppercase md:text-left divide-x-4 divide-yellow">
-                <div className="p-3 lg:p-6 flex justify-center items-center gap-2">
+                <div className="p-3 2xl:p-6 flex justify-center items-center gap-2">
                   <div className="bg-red p-1 lg:p-3 rounded-full">
                     <img
                       src="/reading-book.svg"
@@ -68,7 +68,7 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
           </div>
 
           {/* Button aligned to bottom */}
-          <button className="max-w-[242px] mt-5 lg:mt-8 2xl:mt-0 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full mx-auto md:mx-0">
+          <button className="max-w-[242px] mt-5 2xl:mt-0 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full mx-auto md:mx-0">
             Learn More
           </button>
         </div>
