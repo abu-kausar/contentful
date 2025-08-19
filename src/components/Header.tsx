@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="min-h-20 custom-iamgeBackground border-b-2 border-gray-200 top-0 z-50 w-full">
@@ -12,9 +14,9 @@ export default function Header() {
         className="w-full flex justify-between items-center h-full flex-wrap px-8 md:px-16"
       >
         {/* Logo */}
-         <Link href="/" className="h-20 py-4">
-           <img className="h-full" src="/images/logo.svg" alt="KCEN logo" />
-         </Link>
+        <Link href="/" className="h-20 py-4">
+          <img className="h-full" src="/images/logo.svg" alt="KCEN logo" />
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -48,14 +50,18 @@ export default function Header() {
         {/* Desktop & Mobile Menu */}
         <ul
           className={`transition-all duration-500 ease-in-out font-button text-2xl md:text-base text-white uppercase flex flex-col md:flex-row justify-around md:justify-end w-full md:w-auto ${
-            menuOpen ? "max-h-screen py-4 visible" : "max-h-0 invisible md:visible md:max-h-20"
+            menuOpen
+              ? "max-h-screen py-4 visible"
+              : "max-h-0 invisible md:visible md:max-h-20"
           } overflow-hidden`}
         >
           <div className="flex flex-col md:flex-row justify-evenly md:justify-end uppercase flex-nowrap md:flex-wrap flex-grow md:py-5 md:pl-5 text-center md:text-left tracking-wide">
-            <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <Link href="/solutions">
-                Black Equity Solutions
-              </Link>
+            <li
+              className={`flex justify-center items-center md:pr-5 ${
+                pathname === "/solutions" ? "text-yellow" : "text-white"
+              } hover:text-yellow`}
+            >
+              <Link href="/solutions">Black Equity Solutions</Link>
             </li>
             <li className="flex justify-center items-center hover:text-yellow md:pr-5">
               <a
@@ -66,15 +72,19 @@ export default function Header() {
                 Black Media
               </a>
             </li>
-            <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <Link href="/initiatives">
-                Initiatives
-              </Link>
+            <li
+              className={`flex justify-center items-center md:pr-5 ${
+                pathname === "/initiatives" ? "text-yellow" : "text-white"
+              } hover:text-yellow`}
+            >
+              <Link href="/initiatives">Initiatives</Link>
             </li>
-            <li className="flex justify-center items-center hover:text-yellow md:pr-5">
-              <Link href="/about">
-                About Us
-              </Link>
+            <li
+              className={`flex justify-center items-center md:pr-5 ${
+                pathname === "/about" ? "text-yellow" : "text-white"
+              } hover:text-yellow`}
+            >
+              <Link href="/about">About Us</Link>
             </li>
           </div>
           <li className="flex justify-center items-center hover:text-yellow">
