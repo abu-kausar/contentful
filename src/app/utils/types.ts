@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export interface BlogSlideProps {
   title: string;
   slug: string;
@@ -36,6 +38,7 @@ export interface BlogPostProps {
   title: string;
   body: string;
   heroImage: {
+    sys: any;
     fields: {
       file: {
         url: string;
@@ -45,21 +48,14 @@ export interface BlogPostProps {
   };
   slug: string;
   description: string;
-  articles: {
-    fields: {
-      title: string;
-      slug: string;
-      description: string;
-      heroImage: {
-        fields: {
-          file: {
-            url: string;
-          };
-          title: string;
-        };
+  articles: [
+    {
+      fields: any;
+      sys: {
+        id: string;
       };
-    };
-  }
+    }
+  ];
 }
 
 export interface AboutPageFields {
@@ -110,27 +106,38 @@ export interface HomePageFields {
   };
 }
 
+export interface ArticleProps {
+  title: string;
+  url: string;
+  description: string;
+  heroImage: {
+    sys: {
+      id: string;
+    };
+  };
+}
+
 export interface LandingHeroFields {
   title: string;
   description: string;
 }
 
 export interface CampaignTickerProps {
-    campaignTickerText: string;
-    marqueeTickerLink: string;
+  campaignTickerText: string;
+  marqueeTickerLink: string;
 }
 
-export interface EquitySectionProps{
+export interface EquitySectionProps {
   title: string;
   description: string;
 }
 
-export interface PayTheFeeSectionProps{
+export interface PayTheFeeSectionProps {
   title: string;
   description: string;
 }
 
-export interface HomeClientProps{
+export interface HomeClientProps {
   landingData: string;
   equitySectionData: string;
   payTheFeeSectionData: string;

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { ContentfulEntry } from "@/app/utils/types";
+import { createClient } from "contentful";
 
 // Fetch multiple entries by content type
 export async function fetchEntries<T>(
@@ -29,7 +30,9 @@ export async function fetchEntries<T>(
 
   return data.items.map((item: any) => {
     const heroImageRef = item.fields.heroImage?.sys?.id;
-    const resolvedHeroImage = heroImageRef ? assetsMap.get(heroImageRef) : undefined;
+    const resolvedHeroImage = heroImageRef
+      ? assetsMap.get(heroImageRef)
+      : undefined;
 
     return {
       ...item,
@@ -59,3 +62,13 @@ export async function fetchEntryById<T>(
   const data = await res.json();
   return data;
 }
+
+export const fetchAssetById = async (id: string) => {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID!,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+  });
+  
+  const asset = await client.getAsset(id);
+  return asset;
+};
