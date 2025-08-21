@@ -47,9 +47,11 @@ const RecentWinsPage = () => {
             KCEN Wins: Moving the Dial for Black Equity
           </h2>
           <p className="mb-10">
-            Our success is measured by tangible improvements in the lives of
-            Black people. Through nearly 315,000 direct actions, KCEN has
-            mobilized efforts that have secured:
+            We measure success by the tangible investments and improvements in
+            the lives of Black people. Through nearly 315,000 direct actions of
+            community members, we have made strides in securing land and other
+            forms of equity for the Black community.To date our collective
+            achievements include:
           </p>
           <ul className="text-white text-xl font-normal mx-0 md:mx-72 flex flex-col gap-y-6">
             <li className="flex items-start gap-x-10">
@@ -58,10 +60,20 @@ const RecentWinsPage = () => {
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                <b>$200 million</b> for the Community Reinvestment Program,
-                safeguarded from redirection by opportunistic politicians.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">
+                  $200 Million for the&nbsp;
+                  <a
+                    href="https://www.commerce.wa.gov/crp/"
+                    target="_blank"
+                    className="underline cursor-pointer"
+                  >
+                    Community Reinvestment Program
+                  </a>
+                </strong>
+                &nbsp;for the Community Reinvestment Program, safeguarded from
+                redirection by opportunistic politicians.
+              </p>
             </li>
 
             <li className="flex items-start gap-x-10">
@@ -70,96 +82,207 @@ const RecentWinsPage = () => {
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                <b>$150 million</b> in increased community development for
-                affordable housing from the Washington State Housing Finance
-                Commission, supporting projects like Africatown Plaza, Ethiopian
-                Community Center, Elizabeth Thomas Homes, Beacon Pacific Village
-                North Lot, and NP Eastern Hotel.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">
+                  $150 Million for affordable housing
+                </strong>
+                &nbsp;development from the Washington State Housing Finance
+                Commission, supporting projects like&nbsp;
+                <a
+                  href="https://www.quorum.us/login/?next=/outbox/compose/403086/africatownplaza.org/"
+                  target="_blank"
+                  className="underline cursor-pointer"
+                >
+                  Africatown Plaza
+                </a>
+                , the&nbsp;
+                <a
+                  href="https://ecseattle.org/ethiopian-village/"
+                  target="_blank"
+                  className="underline cursor-pointer"
+                >
+                  Ethiopian Community Center
+                </a>
+                ,&nbsp;
+                <a
+                  href="https://www.elizabeththomashomesapts.com/"
+                  target="_blank"
+                  className="underline cursor-pointer"
+                >
+                  Elizabeth Thomas Homes
+                </a>
+                ,&nbsp;
+                <a
+                  href="https://docs.google.com/document/d/1zHAfYykQ5GAtYiUfrtv7hoLddGCKujACbjj9B57EP58/edit?tab=t.vmnag9sfxine"
+                  target="_blank"
+                  className="underline cursor-pointer"
+                >
+                  Beacon Pacific Village
+                </a>
+                , Village (North Lot), and the&nbsp;
+                <a
+                  href="https://allycommunitydevelopment.com/np-and-eastern-hotel/"
+                  target="_blank"
+                  className="underline cursor-pointer"
+                >
+                  NP/Eastern Hotel
+                </a>
+                .
+              </p>
             </li>
+
             <li className="flex items-start gap-x-10">
               <img
                 src="/images/liarrow.png"
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                <b>$1.4 million</b> allocated for the Keiro project, preventing
-                predatory land grabs and creating opportunities for Black
-                community equity in the Central District.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">$100 million</strong>
+                &nbsp;from City of Seattle.
+              </p>
             </li>
+
             <li className="flex items-start gap-x-10">
               <img
                 src="/images/liarrow.png"
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                The transformation of Fire Station 6 into the William Grose
-                Center, opened in 2022.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">
+                  $14 Million&nbsp;
+                </strong>
+                allocated for the Keiro acquisiton (now&nbsp; 
+                <a
+                    href="https://www.quorum.us/login/?next=/outbox/compose/403086/benuhome.org/"
+                    target="_blank"
+                    className="underline cursor-pointer"
+                  >
+                    Benu Community
+                  </a>
+                 &nbsp;Home), preventing predatory development and creating
+                opportunities for Black community equity.
+              </p>
             </li>
+
             <li className="flex items-start gap-x-10">
               <img
                 src="/images/liarrow.png"
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                Land transfers for the development of the Youth Achievement
-                Center, led by Community Passageways & Creative Justice.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">
+                  Transfer of Fire Station 6 to become the&nbsp;
+                  <a
+                    href="https://www.quorum.us/login/?next=/outbox/compose/403086/williamgrose.org/"
+                    target="_blank"
+                    className="underline cursor-pointer"
+                  >
+                    William Grose Center
+                  </a>
+                </strong>
+                &nbsp;which opened in 2022.
+              </p>
             </li>
+
             <li className="flex items-start gap-x-10">
               <img
                 src="/images/liarrow.png"
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                <b>$27 million</b> for Africatown Plaza, promoting Black
-                community-centered spaces and scalable models to counter
-                gentrification impacts.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">
+                  Land Transfer for the development of the&nbsp;
+                  <a
+                    href="https://www.youthachievementcenter.org/"
+                    target="_blank"
+                    className="underline cursor-pointer"
+                  >
+                    Youth Achievement Center
+                  </a>
+                </strong>
+                &nbsp;led by Community Passageways & Creative Justice and Africatown Community Land Trust.
+              </p>
             </li>
+
             <li className="flex items-start gap-x-10">
               <img
                 src="/images/liarrow.png"
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                Secured state funding for the Tubman Center for Health &
-                Freedom, advancing long-overdue community-led health and healing
-                in the South End, with plans for a 40,000 square-foot center by
-                2027, serving up to 120,000 patients annually.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">
+                  State Funding for&nbsp;
+                  <a
+                    href="https://www.tubmanhealth.org/"
+                    target="_blank"
+                    className="underline cursor-pointer"
+                  >
+                    Tubman Center for Health & Freedom’s
+                  </a>
+                </strong>
+                &nbsp;two community-owned health sites in South Seattle, and a new 40,000-square-foot center set to open in 2027.
+              </p>
             </li>
+
             <li className="flex items-start gap-x-10">
               <img
                 src="/images/liarrow.png"
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                <b>$1 million</b> to purchase Black land ownership in Othello
-                for an East African-centered Family Empowerment Center and
-                Community Housing.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">
+                  $1 Million secured for Black land ownership in Othello
+                </strong>
+                , supporting the East African-centered Family Empower Center and Community Housing.
+              </p>
             </li>
+
             <li className="flex items-start gap-x-10">
               <img
                 src="/images/liarrow.png"
                 alt=""
                 className="w-6 h-auto mt-2"
               />
-              <span>
-                <b>$400,000</b> in ongoing support to restore and expand
-                education to Petah Village in South Seattle through outdoor
-                preschool education.
-              </span>
+              <p className="text-xl">
+                <strong className="font-bold">
+                  Supported&nbsp;
+                  <a
+                    href="https://newbirthcci.yalifestudios.com/"
+                    target="_blank"
+                    className="underline cursor-pointer"
+                  >
+                    New Birth Center for Community Inclusion
+                  </a>
+                </strong>
+                &nbsp;in securing legislative funds for phase 1 of Petah Villages, a trauma-informed early childhood education program in Skyway.
+              </p>
+            </li>
+            
+            <li className="flex items-start gap-x-10">
+              <img
+                src="/images/liarrow.png"
+                alt=""
+                className="w-6 h-auto mt-2"
+              />
+              <p className="text-xl">
+                <strong className="font-bold">
+                  Over 4,000 actions to secure the&nbsp;
+                  <a
+                    href="https://www.wshfc.org/covenant/index.htm"
+                    target="_blank"
+                    className="underline cursor-pointer"
+                  >
+                    Covenant Homeownership Act
+                  </a>
+                </strong>
+                &nbsp;that provides up to $150K in down payment assistance to homebuyers who&apos;s families endured racial housing covenants.
+              </p>
             </li>
           </ul>
         </section>

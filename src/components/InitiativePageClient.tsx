@@ -357,7 +357,7 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                 {/* Blog Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5 w-full">
                   {/* Left Column (2 stacked small cards) */}
-                  <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-5 xl:h-[640px]">
                     {entries.slice(0, 2).map((item) => {
                       const imageUrl = item.fields.heroImageResolved?.fields
                         ?.file?.url
@@ -393,7 +393,7 @@ const InitiativePageClient = ({ entries }: { entries: any[] }) => {
                     {entries[2] && (
                       <Link
                         href={`/all-blog/${entries[2].fields.slug}`}
-                        className="relative block w-full h-full"
+                        className="relative block w-full h-full xl:h-[640px]"
                       >
                         <img
                           src={
