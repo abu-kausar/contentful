@@ -26,10 +26,11 @@ const WhatWeDoSection = ({
   solutionEntries: any;
 }) => {
   const defaultSlug = solutionEntries[0].fields.slug;
-  const [activeId, setActiveId] = useState<string | null>(defaultSlug);
+  const [activeId, setActiveId] = useState<string>(defaultSlug);
 
   const handleToggle = (slug: string) => {
-    setActiveId((prevId) => (prevId === slug ? null : slug));
+    // Only change activeId if it’s different
+    setActiveId((prevId) => (prevId !== slug ? slug : prevId));
   };
 
   const activeItem = solutionEntries.find(
@@ -128,23 +129,25 @@ const WhatWeDoSection = ({
           </div>
 
           {/* Image Section */}
-          <div className="flex items-center justify-center">
-            <Link
-              href={`/solutions/${activeItem.fields.slug}`}
-              className="relative group w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden"
-            >
-              <img
-                src={`https:${activeItem.fields.heroImageResolved.fields.file.url}`}
-                alt={activeItem.fields.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-[#000000A8] bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white text-2xl lg:text-4xl font-normal font-button uppercase">
-                  View Details
-                </span>
-              </div>
-            </Link>
-          </div>
+          {activeItem && (
+            <div className="flex items-center justify-center">
+              <Link
+                href={`/solutions/${activeItem.fields.slug}`}
+                className="relative group w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden"
+              >
+                <img
+                  src={`https:${activeItem.fields.heroImageResolved.fields.file.url}`}
+                  alt={activeItem.fields.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[#000000A8] bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white text-2xl lg:text-4xl font-normal font-button uppercase">
+                    View Details
+                  </span>
+                </div>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </section>

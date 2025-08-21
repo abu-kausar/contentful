@@ -58,19 +58,6 @@ export interface BlogPostProps {
   ];
 }
 
-export interface AboutPageFields {
-  title: string;
-  body: string;
-  heroImage: {
-    fields: {
-      file: {
-        url: string;
-      };
-      title: string;
-    };
-  };
-}
-
 export interface HomePageFields {
   mainSplashHeadline: string;
   mainSplashDescription: string;

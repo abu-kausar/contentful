@@ -4,7 +4,10 @@ import { BlogPostProps } from "../utils/types";
 import Link from "next/link";
 
 const AllBlogsPage = async () => {
-  const entries = await fetchEntries<BlogPostProps>("blogPost");
+  let entries = await fetchEntries<BlogPostProps>("blogPost");
+
+  // Exclude the "about-us" entry
+  entries = entries.filter((entry) => entry.fields.slug !== "about-us");
 
   // define a default image path (can be local or external)
   const defaultImage = "/defaultImage.png"; 

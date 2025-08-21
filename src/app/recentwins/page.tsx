@@ -1,10 +1,12 @@
-import React from "react";
-
+/* eslint-disable @next/next/no-img-element */
 const RecentWinsPage = () => {
   return (
     <div className="custom-iamgeBackground">
-      <div className="mb-10 py-16 bg-[url('/images/winsbg.png')] bg-cover bg-no-repeat">
-        <div className="container mx-auto px-5 relative">
+      <div className="mb-10 py-16 relative bg-[url('/images/winsbg.jpg')] bg-cover bg-no-repeat">
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="container mx-auto px-5 relative z-10">
           <p className="text-base text-center md:text-left text-white font-bold uppercase">
             Featured Recent Win
           </p>
@@ -209,7 +211,7 @@ const RecentWinsPage = () => {
             directing and managing resources through our own channels.
           </p>
           <br />
-          <p>
+          <p className="pb-10">
             With Juneteenth now a national holiday, we call upon our supporters
             to honor its significance by recommitting to supporting our critical
             work. Together, we can dismantle systemic inequities and establish a
@@ -217,14 +219,14 @@ const RecentWinsPage = () => {
             County.
           </p>
         </section>
-        <div className="flex items-center justify-center py-10">
+        {/* <div className="flex items-center justify-center py-10">
           <a
             href=""
             className="bg-yellow text-black px-5 py-2 rounded-full text-base uppercase font-bold hover:bg-green- hover:text-white"
           >
             Latest freedom actions
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

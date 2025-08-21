@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
 interface PlanProps {
@@ -57,11 +58,15 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
               <div className="py-3 lg:py-5 px-4 sm:px-6 lg:px-9 space-y-2 lg:space-y-4 font-body text-md md:text-text-lg">
                 <div className="flex items-start gap-2">
                   <FaCheckCircle className="text-yellow mt-1" />
-                  <p className="text-base 2xl:text-lg">We build Black equity through local leadership</p>
+                  <p className="text-base 2xl:text-lg">
+                    We build Black equity through local leadership
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <FaCheckCircle className="text-yellow mt-1" />
-                  <p className="text-base 2xl:text-lg">Our vision: thriving, anti-racist communities.</p>
+                  <p className="text-base 2xl:text-lg">
+                    Our vision: thriving, anti-racist communities.
+                  </p>
                 </div>
               </div>
             </div>
@@ -69,7 +74,7 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
 
           {/* Button aligned to bottom */}
           <button className="max-w-[242px] mt-5 2xl:mt-0 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full mx-auto md:mx-0">
-            Learn More
+            <Link href="/about">Learn More</Link>
           </button>
         </div>
       </div>
