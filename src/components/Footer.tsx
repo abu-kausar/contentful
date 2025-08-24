@@ -63,7 +63,7 @@
 
 // export default Footer;
 
-import React from "react";
+import Link from "next/link";
 import NewsletterForm from "./NewsletterForm";
 
 interface FooterImageProps {
@@ -181,12 +181,12 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="flex flex-col md:flex-row justify-between items-center text-sm py-5 md:py-10 gap-4">
         <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-          <a href="/about" className="hover:underline">
+          <Link href="/about" className="hover:underline">
             About Us
-          </a>
-          <a href="#" className="hover:underline">
-            Our Services
-          </a>
+          </Link>
+          <Link href="/all-blog" className="hover:underline">
+            Blog
+          </Link>
           <a href="#" className="hover:underline">
             Contact Us
           </a>
