@@ -14,7 +14,7 @@ const EquitySolutionsPage = async () => {
 
   return (
     <div className="custom-iamgeBackground">
-      <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white p-8 md:p-16 text-white">
+      <h2 className="font-heading font-bold text-6xl md:text-7xl uppercase tracking-wide text-white p-8 md:p-16">
         Equity Solutions
       </h2>
       <section className="border-t-2 border-b-2 border-gray-200">

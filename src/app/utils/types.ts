@@ -96,6 +96,7 @@ export interface HomePageFields {
 export interface ArticleProps {
   title: string;
   url: string;
+  slug: string;
   description: string;
   heroImage: {
     sys: {

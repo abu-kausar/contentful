@@ -7,7 +7,7 @@ const AllBlogsPage = async () => {
   let entries = await fetchEntries<BlogPostProps>("blogPost");
 
   // Exclude the "about-us" entry
-  entries = entries.filter((entry) => entry.fields.slug !== "about-us");
+  entries = entries.filter((entry) => entry.fields.slug !== "about-us" && entry.fields.slug !== "richtext-entry-not-visible-do-not-delete");
 
   // define a default image path (can be local or external)
   const defaultImage = "/defaultImage.png"; 
