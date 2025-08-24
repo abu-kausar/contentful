@@ -1,111 +1,39 @@
-// "use client";
-// import React, { useState } from "react";
-
-// // eslint-disable-next-line @typescript-eslint/no-explicit-any
-// function encode(data: any) {
-//   return Object.keys(data)
-//     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-//     .join("&");
-// }
-
-// const NewsletterForm = () => {
-//   const [state, setState] = useState({});
-//   const [submitted, setSubmitted] = useState(false);
-
-//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//   const handleChange = (e: any) => {
-//     setState({ [e.target.name]: e.target.value });
-//   };
-
-//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//   const handleSubmit = (e: any) => {
-//     e.preventDefault();
-//     const form = e.target;
-//     fetch("/", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//       body: encode({
-//         "form-name": form.getAttribute("name"),
-//         ...state,
-//       }),
-//     })
-//       .then(() => {
-//         setSubmitted(true);
-//       })
-//       .catch((error) => alert(error));
-//   };
-
-//   if (submitted) {
-//     return (
-//       <div>
-//         <p className="font-body text-xl text-white py-4">
-//           Thank you for signing up for the Black Joy Newsletter!
-//         </p>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <form
-//       name="newsletter"
-//       method="post"
-//       data-netlify="true"
-//       data-netlify-honeypot="bot-field"
-//       onSubmit={handleSubmit}
-//     >
-//       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-//       <input type="hidden" name="form-name" value="contact" />
-//       <div hidden>
-//         <label>
-//           Don’t fill this out:{" "}
-//           <input name="bot-field" onChange={handleChange} />
-//         </label>
-//       </div>
-//       <div className="field">
-//         <label className="hidden" htmlFor={"email"}>
-//           Email
-//         </label>
-//         <div>
-//           <input
-//             type="email"
-//             placeholder="Enter email here"
-//             name="email"
-//             id="email"
-//             required={true}
-//             onChange={handleChange}
-//             className="w-full py-2 pl-2 my-12 bg-white text-black focus:outline-none"
-//           />
-//         </div>
-//       </div>
-//       <div className="text-center">
-//         <button
-//           type="submit"
-//           className="self-center font-button text-base font-medium uppercase cursor-pointer bg-transparent hover:bg-white hover:text-black mt-2 px-14 py-2 border-2 border-white rounded-full"
-//         >
-//           Subscribe
-//         </button>
-//       </div>
-//     </form>
-//   );
-// };
-
-// export default NewsletterForm;
-
-// NewsletterForm.tsx
 "use client";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const NewsletterForm = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
-    setEmail("");
+
+    try {
+      // Send email to GoHighLevel
+      await fetch(
+        "https://link.wksocial.com/api/forms/B5iaNw7wutBcfZXCUC8j/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      toast.success("Thank you for subscribing!");
+      setEmail("");
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      toast.error("Something went wrong. Please try again.");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5 xl:gap-8">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-5 xl:gap-8"
+    >
       <input
         type="email"
         placeholder="Enter email here"
