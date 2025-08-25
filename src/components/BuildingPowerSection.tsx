@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const BuildingPowerSection = () => {
@@ -21,8 +22,8 @@ const BuildingPowerSection = () => {
       </p>
       <p className="text-white font-medium">#PayTheFee</p>
 
-      <button className="mt-6 lg:mt-8 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full">
-        Donate Now
+      <button className="mt-6 lg:mt-8 bg-yellow hover:bg-yellow/80 transition-all text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full">
+        <Link href={"https://secure.qgiv.com/for/africatowncommunitylandtrust/"} target="_blank">Donate Now</Link>
       </button>
     </section>
   );

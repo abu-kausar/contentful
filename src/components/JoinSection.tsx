@@ -37,7 +37,7 @@ const JoinSection = ({ title, subtitle }: JoinSectionProps) => {
             {title}
           </h2>
           <p className="text-base sm:text-lg xl:text-xl">{subtitle}</p>
-          <button className=" bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full">
+          <button className=" bg-yellow hover:bg-yellow/80 transition-all text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full">
             Tap In
           </button>
         </div>

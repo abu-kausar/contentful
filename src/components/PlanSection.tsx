@@ -73,7 +73,7 @@ const PlanSection = ({ title, subtitle }: PlanProps) => {
           </div>
 
           {/* Button aligned to bottom */}
-          <button className="max-w-[242px] mt-5 2xl:mt-0 bg-yellow hover:bg-yellow-500 text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full mx-auto md:mx-0">
+          <button className="max-w-[242px] mt-5 2xl:mt-0 bg-yellow hover:bg-yellow/80 transition-all text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full mx-auto md:mx-0">
             <Link href="/about">Learn More</Link>
           </button>
         </div>

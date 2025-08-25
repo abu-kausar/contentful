@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ArticleProps, BlogPostProps } from "@/app/utils/types";
+import BackButton from "@/components/BackButton";
 import { fetchAssetById, fetchEntries, fetchEntryById } from "@/lib/contentful";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
@@ -12,7 +13,16 @@ const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const entry = entries.find((e) => e.fields.slug === slug);
 
   if (!entry) {
-    return <div>No content found.</div>;
+    return (
+      <div className="custom-iamgeBackground">
+        <h1 className="font-heading font-bold text-8xl md:text-9xl uppercase tracking-wide p-8 md:p-16 text-white">
+          No Content Found
+        </h1>
+        <p className="font-body text-xl pl-8 pb-8 md:pl-16 md:pb-16 text-white">
+          No content found for this url. Explore others <BackButton />
+        </p>
+      </div>
+    );
   }
 
   const content = entry.fields;

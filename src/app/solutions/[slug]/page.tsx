@@ -76,7 +76,7 @@ const SlugPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </h2>
           <div className="pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {articlesData.map((article, index) => (
-              <a key={index} href={`/all-blog/${article?.fields.slug}`}>
+              <a key={index} href={article?.fields.slug ? `/all-blog/${article?.fields.slug}` : `https://${article?.fields.url}`}>
                 <div className="text-white text-center hover-yellow-text flex flex-col h-full cursor-pointer hover:text-yellow">
                   <img
                     src={article?.heroImageUrl || "/defaultImage.png"}

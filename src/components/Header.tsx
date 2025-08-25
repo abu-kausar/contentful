@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -91,9 +91,9 @@ export default function Header() {
             <button
               data-campaign-id="4028"
               data-custom="true"
-              className="commitchange-donate focus:outline-none rounded-full font-button py-2 uppercase tracking-wider text-black bg-yellow px-6 mt-5 md:mt-0 mb-4 md:mb-0 cursor-pointer"
+              className="commitchange-donate focus:outline-none rounded-full font-button py-2 uppercase tracking-wider text-black bg-yellow hover:bg-yellow/80 transition-all px-6 mt-5 md:mt-0 mb-4 md:mb-0 cursor-pointer"
             >
-              Donate
+              <Link href={"https://secure.qgiv.com/for/africatowncommunitylandtrust/"} target="_blank">Donate</Link>
             </button>
           </li>
         </ul>
