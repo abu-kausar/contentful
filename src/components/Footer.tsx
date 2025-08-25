@@ -187,9 +187,6 @@ const Footer = () => {
           <Link href="/all-blog" className="hover:underline">
             Blog
           </Link>
-          <a href="#" className="hover:underline">
-            Contact Us
-          </a>
         </div>
         <p className="text-center md:text-right">
           © {currentYear}. All Right Reserved by{" "}

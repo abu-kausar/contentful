@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface JoinSectionProps {
   title: string;
@@ -38,7 +39,9 @@ const JoinSection = ({ title, subtitle }: JoinSectionProps) => {
           </h2>
           <p className="text-base sm:text-lg xl:text-xl">{subtitle}</p>
           <button className=" bg-yellow hover:bg-yellow/80 transition-all text-black font-button uppercase font-normal lg:font-medium py-3 md:py-4 lg:py-5 px-[30px] sm:px-9 lg:px-[70px] cursor-pointer rounded-full">
-            Tap In
+            <Link href={"https://kingcountyequitynow.quorum.us/sign_up/2791/?"} target="_blank">
+              Tap In
+            </Link>
           </button>
         </div>
       </div>

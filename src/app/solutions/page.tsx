@@ -1,6 +1,5 @@
 import { fetchEntries } from "@/lib/contentful";
 import Link from "next/link";
-import React from "react";
 import { SolutionsPageFields } from "../utils/types";
 
 const EquitySolutionsPage = async () => {
@@ -43,14 +42,18 @@ const EquitySolutionsPage = async () => {
             return (
               <Link
                 key={index}
-                href={`/solutions/${solution.fields.slug}`}
+                href={
+                  solution.fields.slug === "community-safety"
+                    ? "#"
+                    : `/solutions/${solution.fields.slug}`
+                }
                 className={`
-            border-b-2 border-gray-200
-            md:border-b-2
-            md:border-r-2
-            ${isLastColumn ? "md:border-r-0" : ""}
-            ${isLastRow ? "md:border-b-0" : ""}
-          `}
+                  border-b-2 border-gray-200
+                  md:border-b-2
+                  md:border-r-2
+                  ${isLastColumn ? "md:border-r-0" : ""}
+                  ${isLastRow ? "md:border-b-0" : ""}
+                `}
               >
                 <div
                   className={`

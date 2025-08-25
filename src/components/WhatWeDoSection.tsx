@@ -4,10 +4,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import {
-  RiMoneyDollarCircleLine,
   RiGraduationCapFill,
-  RiShirtLine,
   RiHospitalFill,
+  RiMoneyDollarCircleLine,
+  RiShirtLine,
 } from "react-icons/ri";
 
 const icons = [
@@ -68,7 +68,10 @@ const WhatWeDoSection = ({
               ) => {
                 const IconComponent = icons[index];
                 return (
-                  <div key={index} className="py-4 border-b-2 border-[#FFFFFF40]">
+                  <div
+                    key={index}
+                    className="py-4 border-b-2 border-[#FFFFFF40]"
+                  >
                     <div
                       className={`transition-all duration-300 ${
                         activeId === item.fields.slug
@@ -132,7 +135,11 @@ const WhatWeDoSection = ({
           {activeItem && (
             <div className="flex items-center justify-center">
               <Link
-                href={`/solutions/${activeItem.fields.slug}`}
+                href={
+                  activeItem.fields.slug === "community-safety"
+                    ? "#"
+                    : `/solutions/${activeItem.fields.slug}`
+                }
                 className="relative group w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden"
               >
                 <img

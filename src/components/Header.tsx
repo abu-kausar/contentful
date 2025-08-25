@@ -63,7 +63,7 @@ export default function Header() {
             >
               <Link href="/solutions">Black Equity Solutions</Link>
             </li>
-            <li className="flex justify-center items-center hover:text-yellow md:pr-5">
+            {/* <li className="flex justify-center items-center hover:text-yellow md:pr-5">
               <a
                 href="https://transcripts.kingcountyequitynow.com"
                 target="_blank"
@@ -78,7 +78,7 @@ export default function Header() {
               } hover:text-yellow`}
             >
               <Link href="/initiatives">Initiatives</Link>
-            </li>
+            </li> */}
             <li
               className={`flex justify-center items-center md:pr-5 ${
                 pathname === "/about" ? "text-yellow" : "text-white"
